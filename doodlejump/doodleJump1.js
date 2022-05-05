@@ -20,21 +20,12 @@ var backgroundImg;
 //  Preload the Image Sprites
 // ===========================
 
-function setC(value) {
-  if(value == "1") {
-    doodlerLeftImg = "../images/djc1left.png";
-    doodlerRightImg = "../images/djc1right.png";
-  }
-  else {
-    doodlerLeftImg = loadImage("../images/djc2left.png");
-    doodlerRightImg = loadImage("../images/djc2right.png");
-  }
-}
-
 
 function preload() {
   backgroundImg = loadImage("https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Graph-paper.svg/1024px-Graph-paper.svg.png");
   platformImg = loadImage("https://raw.githubusercontent.com/JasonMize/coding-league-assets/master/doodle-jump-platform.png");
+  doodlerLeftImg = loadImage("../images/djc1left.png");
+  doodlerRightImg = loadImage("../images/djc1right.png");
 }
 
 // ===========================

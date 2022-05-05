@@ -590,9 +590,9 @@ window.startDJ = function(){
 
 window.chooseCharac = function(id){
 	if (id == "dc1") {
-  	var other = "dc2";
+		myIframe.contentWindow.postMessage('1', '*');
 	} else {
-  	var other = "dc1";
+		myIframe.contentWindow.postMessage('2', '*');
 	}
 	$("#" + id).animate({width: "277px"}, {duration: 2000, queue: false});
 	$("#" + other).animate({width: "0px"}, {duration: 2000, queue: false});
