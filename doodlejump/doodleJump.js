@@ -22,12 +22,12 @@ var backgroundImg;
 
 function setC(value) {
   if(value == "1") {
-    var left = "/Users/owencorkery/Documents/Spring 2022/DIG 404/game/djc1left.png";
-    var right = "/Users/owencorkery/Documents/Spring 2022/DIG 404/game/djc1right.png";
+    var left = "../images/djc1left.png";
+    var right = "../images/djc1right.png";
   }
   else {
-    var left = "/Users/owencorkery/Documents/Spring 2022/DIG 404/game/djc2left.png";
-    var right = "/Users/owencorkery/Documents/Spring 2022/DIG 404/game/djc2right.png";
+    var left = "../images/djc2left.png";
+    var right = "../images/djc2right.png";
   }
 }
 
