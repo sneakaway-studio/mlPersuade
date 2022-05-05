@@ -1,0 +1,14 @@
+
+body {
+    background: rgb(255, 255, 255);
+    color: #f8f8f8;
+    width: 277px;
+    height: 500px;
+    margin: 0;
+
+  }
+#gameContain {
+    width: 277px;
+    height: 500px;
+    margin: 0;
+}
