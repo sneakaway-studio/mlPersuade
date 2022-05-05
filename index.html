@@ -575,11 +575,6 @@ window.youTube = function(){
 
 }
 
-window.setCh = function(chnum) {
-	document.getElementById('iframe').contentWindow.setC(chnum);
-	document.getElementById('iframe').contentWindow.redraw();
-}
-
 window.startDJ = function(){
 		document.getElementById('iframe').style.zIndex="100";
 		document.getElementById('iframe').style.animationPlayState = "running";
@@ -590,9 +585,9 @@ window.startDJ = function(){
 
 window.chooseCharac = function(id){
 	if (id == "dc1") {
-		document.getElementById('iframe').src="/doodlejump/doodle1.html"
+		document.getElementById('iframe').src="/doodlejump/doodle1.html";
 	} else {
-		document.getElementById('iframe').src="/doodlejump/doodle2.html"
+		document.getElementById('iframe').src="/doodlejump/doodle2.html";
 	}
 	$("#" + id).animate({width: "277px"}, {duration: 2000, queue: false});
 	$("#" + other).animate({width: "0px"}, {duration: 2000, queue: false});
