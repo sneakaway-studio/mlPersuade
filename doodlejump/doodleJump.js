@@ -22,12 +22,12 @@ var backgroundImg;
 
 function setC(value) {
   if(value == "1") {
-    var left = "../images/djc1left.png";
-    var right = "../images/djc1right.png";
+    doodlerLeftImg = "../images/djc1left.png";
+    doodlerRightImg = "../images/djc1right.png";
   }
   else {
-    var left = "../images/djc2left.png";
-    var right = "../images/djc2right.png";
+    doodlerLeftImg = loadImage("../images/djc2left.png");
+    doodlerRightImg = loadImage("../images/djc2right.png");
   }
 }
 
@@ -48,8 +48,6 @@ function setup() {
 }
 
 function draw() {
-  doodlerLeftImg = loadImage(left);
-  doodlerRightImg = loadImage(right);
   background(247, 239, 231);
   image(backgroundImg, 0, 0, 277, 500);
   if(gameStarted == true) {
