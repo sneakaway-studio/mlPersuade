@@ -576,8 +576,10 @@ window.startDJ = function(){
 window.chooseCharac = function(id){
 	if (id == "dc1") {
 		document.getElementById('iframe').src="/doodlejump/doodle1.html";
+    var other = "dc2";
 	} else {
 		document.getElementById('iframe').src="/doodlejump/doodle2.html";
+    var other = "dc1";
 	}
 	$("#" + id).animate({width: "277px"}, {duration: 2000, queue: false});
 	$("#" + other).animate({width: "0px"}, {duration: 2000, queue: false});
