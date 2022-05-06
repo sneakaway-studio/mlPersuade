@@ -153,7 +153,7 @@ function checkCollision() {
       doodlerY + doodlerSize > plat.yPos &&
       doodlerVelocity > 0
     ) {
-      doodlerVelocity = -5;
+      doodlerVelocity = -8;
     }
   });
   
