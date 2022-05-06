@@ -1,4 +1,4 @@
-var doodlerSize = 130;
+var doodlerSize = 110;
 var doodlerX;
 var doodlerY;
 var doodlerVelocity;
@@ -74,7 +74,7 @@ function mousePressed() {
   if(gameStarted == false) {
     score = 0;
     setupPlatforms();
-    doodlerY = 290;
+    doodlerY = 350;
     doodlerX = platformList[platformList.length - 1].xPos + 10;
     doodlerVelocity = 0.05;
     gameStarted = true;
