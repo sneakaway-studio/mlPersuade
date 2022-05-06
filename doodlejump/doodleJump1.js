@@ -35,7 +35,7 @@ function preload() {
 function setup() {
   let canvas = createCanvas(277, 500);
   canvas.parent('gameContain');
-  frameRate(30);
+  frameRate(60);
   gameStarted = false;
 }
 
