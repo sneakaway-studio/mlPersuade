@@ -2,9 +2,9 @@ var doodlerSize = 70;
 var doodlerX;
 var doodlerY;
 var doodlerVelocity;
-var doodlerXSpeed = 3;
+var doodlerXSpeed = 4;
 var platformWidth = 58;
-var platformHeight = 5;
+var platformHeight = 7;
 var numOfPlatforms = 5;
 var platformList = [];
 var platYChange = 0;
@@ -15,6 +15,7 @@ var doodlerLeftImg;
 var doodlerRightImg;
 var platformImg;
 var backgroundImg;
+var img;
 
 // ===========================
 //  Preload the Image Sprites
@@ -63,7 +64,7 @@ function draw() {
 function moveScreen() {
   if(doodlerY < 207) {
     platYChange = 3;
-    doodlerVelocity += 0.12;
+    doodlerVelocity += 0.25;
   } else {
     platYChange = 0;
   }
@@ -74,9 +75,10 @@ function mousePressed() {
   if(gameStarted == false) {
     score = 0;
     setupPlatforms();
-    doodlerY = 180;
+    img = doodlerLeftImg;
+    doodlerY = 350;
     doodlerX = platformList[platformList.length - 1].xPos + 10;
-    doodlerVelocity = 0.15;
+    doodlerVelocity = 0.1;
     gameStarted = true;
   }
 }
@@ -96,9 +98,11 @@ function moveDoodler() {
 
   if (keyIsDown(LEFT_ARROW)) {
     doodlerX -= doodlerXSpeed;
+    img = doodlerLeftImg;
   }
   if (keyIsDown(RIGHT_ARROW)) {
     doodlerX += doodlerXSpeed;
+    img = doodlerRightImg;
   }
 }
 
