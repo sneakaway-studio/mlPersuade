@@ -62,7 +62,7 @@ function draw() {
 }
 
 function moveScreen() {
-  if(doodlerY < 207) {
+  if(doodlerY < 50) {
     platYChange = 3;
     doodlerVelocity += 0.25;
   } else {
@@ -77,7 +77,7 @@ function mousePressed() {
     setupPlatforms();
     img = doodlerLeftImg;
     doodlerY = 350;
-    doodlerX = platformList[platformList.length - 1].xPos + 10;
+    doodlerX = platformList[platformList.length - 1].xPos + 15;
     doodlerVelocity = 0.1;
     gameStarted = true;
   }
@@ -88,7 +88,7 @@ function mousePressed() {
 // ===========================
 function drawDoodler() {
   fill(204, 200, 52);
-  image(doodlerLeftImg, doodlerX, doodlerY, doodlerSize, 142);
+  image(img, doodlerX, doodlerY, doodlerSize, 142);
 }
 
 function moveDoodler() {

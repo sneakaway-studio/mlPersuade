@@ -88,7 +88,7 @@ function mousePressed() {
 // ===========================
 function drawDoodler() {
   fill(204, 200, 52);
-  image(doodlerLeftImg, doodlerX, doodlerY, doodlerSize, doodlerSize);
+  image(img, doodlerX, doodlerY, doodlerSize, doodlerSize);
 }
 
 function moveDoodler() {
