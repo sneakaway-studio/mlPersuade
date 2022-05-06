@@ -1,4 +1,4 @@
-var doodlerSize = 70;
+var doodlerSize = 50;
 var doodlerX;
 var doodlerY;
 var doodlerVelocity;
@@ -88,7 +88,7 @@ function mousePressed() {
 // ===========================
 function drawDoodler() {
   fill(204, 200, 52);
-  image(img, doodlerX, doodlerY, doodlerSize, doodlerSize);
+  image(img, doodlerX, doodlerY, doodlerSize, 70);
 }
 
 function moveDoodler() {
