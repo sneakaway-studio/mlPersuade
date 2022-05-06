@@ -1,4 +1,4 @@
-var doodlerSize = 70;
+var doodlerSize = 130;
 var doodlerX;
 var doodlerY;
 var doodlerVelocity;
