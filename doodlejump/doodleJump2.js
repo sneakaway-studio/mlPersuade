@@ -4,7 +4,7 @@ var doodlerY;
 var doodlerVelocity;
 var doodlerXSpeed = 2;
 var platformWidth = 58;
-var platformHeight = 8;
+var platformHeight = 12;
 var numOfPlatforms = 5;
 var platformList = [];
 var platYChange = 0;
