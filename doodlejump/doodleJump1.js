@@ -62,7 +62,7 @@ function draw() {
 }
 
 function moveScreen() {
-  if(doodlerY < 207) {
+  if(doodlerY < 250) {
     platYChange = 3;
     doodlerVelocity += 0.25;
   } else {
@@ -76,13 +76,13 @@ function mousePressed() {
     score = 0;
     setupPlatforms();
     img = doodlerLeftImg;
-    doodlerY = 350;
+    doodlerY = 260;
     doodlerX = platformList[platformList.length - 1].xPos + 10;
     doodlerVelocity = 0.1;
     gameStarted = true;
   }
 }
-
+50
 // ===========================
 //  Doodler
 // ===========================

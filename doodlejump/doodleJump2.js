@@ -62,7 +62,7 @@ function draw() {
 }
 
 function moveScreen() {
-  if(doodlerY < 50) {
+  if(doodlerY < 250) {
     platYChange = 3;
     doodlerVelocity += 0.25;
   } else {
@@ -76,7 +76,7 @@ function mousePressed() {
     score = 0;
     setupPlatforms();
     img = doodlerLeftImg;
-    doodlerY = 350;
+    doodlerY = 260;
     doodlerX = platformList[platformList.length - 1].xPos + 15;
     doodlerVelocity = 0.1;
     gameStarted = true;
@@ -93,7 +93,7 @@ function drawDoodler() {
 
 function moveDoodler() {
   // doodler falls with gravity
-  doodlerVelocity += 0.2;
+  doodlerVelocity += 0.1;
   doodlerY += doodlerVelocity;
 
   if (keyIsDown(LEFT_ARROW)) {
