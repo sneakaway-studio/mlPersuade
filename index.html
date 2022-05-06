@@ -564,6 +564,8 @@ window.youTube = function(){
 		$(".screen").animate({left:"178px", top:"74px"}, {duration: 1000, queue: false});
 		$(".iphone").animate({top:"-90px"}, {duration: 1000, queue: false});
 		$(".card").animate({width: "138px"}, {duration: 1000, queue: false});
+    const homeb = document.getElementById('homeb');
+    homeb.style.coords = "(310, 615, 30)";
 		const pt = document.getElementById('choice');
 		const child = document.getElementById('child');
 		pt.style.display = "flex";
@@ -611,7 +613,7 @@ window.chooseCharac = function(id){
 </script><tw-passagedata pid="1" name="Begin" tags="script" position="937,377.6666666666667" size="100,100">&lt;div id=&quot;phd&quot; class=&quot;iphone pp&quot;&gt;
 &lt;img usemap=&quot;#phonemap&quot; src=&quot;images/phone_out.png&quot; class=&quot;posit pp&quot;&gt;
 &lt;map name=&quot;phonemap&quot;&gt;
-&lt;area shape=&quot;circle&quot; coords=&quot;255,525,30&quot; alt=&quot;homeclick&quot; data-passage=&quot;Begin&quot;&gt;
+&lt;area id=&quot;homeb&quot; shape=&quot;circle&quot; coords=&quot;255,525,30&quot; alt=&quot;homeclick&quot; data-passage=&quot;Begin&quot;&gt;
 &lt;/map&gt;
 &lt;div class=&quot;screen pp&quot;&gt;
 &lt;img id=&quot;sc&quot; usemap=&quot;#screenmap&quot; src=&quot;images/homescreen.png&quot; class=&quot;hscreen pp&quot;&gt;
