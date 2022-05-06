@@ -566,8 +566,9 @@ window.youTube = function(){
 }
 
 window.startDJ = function(){
-		document.getElementById('iframe').style.zIndex="100";
+		document.getElementById('iframe').style.zIndex="105";
 		document.getElementById('iframe').style.animationPlayState = "running";
+    document.getElementById('djdiv').style.zIndex="105";
 
 	
 }
@@ -643,7 +644,7 @@ window.chooseCharac = function(id){
   &lt;/div&gt;
   
   &lt;/section&gt;
-&lt;div class=&quot;dJump&quot;&gt;
+&lt;div id=&quot;djdiv&quot; class=&quot;dJump&quot;&gt;
 &lt;iframe height=&quot;500&quot; width=&quot;277&quot; id=&quot;iframe&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
