@@ -88,7 +88,7 @@ function mousePressed() {
 // ===========================
 function drawDoodler() {
   fill(204, 200, 52);
-  image(img, doodlerX, doodlerY, doodlerSize, 142);
+  image(img, doodlerX, doodlerY, doodlerSize, doodlerSize);
 }
 
 function moveDoodler() {
@@ -153,7 +153,7 @@ function checkCollision() {
       doodlerY + doodlerSize > plat.yPos &&
       doodlerVelocity > 0
     ) {
-      doodlerVelocity = -10;
+      doodlerVelocity = -5;
     }
   });
   

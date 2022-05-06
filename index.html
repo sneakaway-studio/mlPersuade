@@ -211,7 +211,7 @@ text.intro {
   bottom:0px;
   width: 221px;
   height:410px;
-  animation: circlefb 3s backwards;
+  animation: circlefb 1.5s backwards;
   animation-play-state: paused;
   box-shadow: inset 10px 10px gray, inset 10px 10px gray;
 }
@@ -220,7 +220,7 @@ text.intro {
   position:absolute;
   top:0px;
   left:0px;
-  animation: circleyt 3s;
+  animation: circleyt 1.5s;
   animation-play-state: paused;
   z-index:101;
 }
@@ -231,8 +231,8 @@ text.intro {
   left: 54px;
   z-index:101;
   animation:
-	zoomIn 2s 2s backwards,
-	zoomOut 2s 5s forwards;
+	zoomIn 1s 1s backwards,
+	zoomOut 1s 3s forwards;
   animation-play-state: paused;
 }
 
@@ -432,7 +432,7 @@ img.posit{
  .pricing-table .card .plan {
 	 font-size: 1.3rem;
 	 position: absolute;
-   	 bottom: 10%;
+   bottom: 10%;
 }
  .pricing-table .card .plan::before, .pricing-table .card .plan::after {
 	 position: absolute;
@@ -551,17 +551,17 @@ window.youTube = function(){
 			logo.style.animationPlayState = "running";
 	}, 1000);
 	setTimeout(function(){
-		$(".posit").animate({height: "740px", width: "626px"}, {duration: 2000, queue: false});
-		$(".iphone").animate({height: "715px", width: "625px"}, {duration: 2000, queue: false});
-		$(".yt, .hscreen, .screen").animate({height: "500px", width: "277px"}, 2000);
-		$(".screen").animate({left:"178px", top:"74px"}, {duration: 2000, queue: false});
-		$(".iphone").animate({top:"-90px"}, {duration: 2000, queue: false});
-		$(".card").animate({width: "138px"}, {duration: 2000, queue: false});
+		$(".posit").animate({height: "740px", width: "626px"}, {duration: 1000, queue: false});
+		$(".iphone").animate({height: "715px", width: "625px"}, {duration: 1000, queue: false});
+		$(".yt, .hscreen, .screen").animate({height: "500px", width: "277px"}, 1000);
+		$(".screen").animate({left:"178px", top:"74px"}, {duration: 1000, queue: false});
+		$(".iphone").animate({top:"-90px"}, {duration: 1000, queue: false});
+		$(".card").animate({width: "138px"}, {duration: 1000, queue: false});
 		const pt = document.getElementById('choice');
 		const child = document.getElementById('child');
 		pt.style.display = "flex";
 		pt.style.zIndex = "102";
-	}, 7000);
+	}, 4000);
 
 }
 
@@ -582,8 +582,8 @@ window.chooseCharac = function(id){
 		document.getElementById('iframe').src="doodlejump/doodle2.html";
     var other = "dc1";
 	}
-	$("#" + id).animate({width: "277px"}, {duration: 2000, queue: false});
-	$("#" + other).animate({width: "0px"}, {duration: 2000, queue: false});
+	$("#" + id).animate({width: "277px"}, {duration: 1000, queue: false});
+	$("#" + other).animate({width: "0px"}, {duration: 1000, queue: false});
 	const yt = document.getElementById("yt");
 	const hs = document.getElementById("sc");
 	yt.style.zIndex = "0";
@@ -591,13 +591,13 @@ window.chooseCharac = function(id){
 	const othEl = document.getElementById(other);
 	setTimeout(function(){
 		othEl.style.zIndex = "0";
-	}, 1500);
+	}, 1000);
 	setTimeout(function(){
 		$(".chs").animate({width: "500px", height: "250px", opacity: "0%"}, {duration: 3000, queue: false});
 		const mainEl = document.getElementById("choice");
 		mainEl.style.zIndex = "1";
 		startDJ();
-	}, 3000);
+	}, 1500);
 	
 }
 
@@ -618,28 +618,28 @@ window.chooseCharac = function(id){
 
 &lt;section id=&quot;choice&quot; class=&quot;pricing-table&quot;&gt;
   &lt;div id=&quot;dc1&quot; class=&quot;card&quot;&gt;
-    &lt;h6 class=&quot;type&quot;&gt;basic&lt;/h6&gt;
+    &lt;h6 class=&quot;type&quot;&gt;Justin&lt;/h6&gt;
 		&lt;img class=&quot;chs&quot; src=&quot;images/djc1left.png&quot;&gt;
-    &lt;h5 class=&quot;plan&quot;&gt;Ch 1&lt;/h5&gt;
+    &lt;h5 class=&quot;plan&quot;&gt;User A&lt;/h5&gt;
     &lt;ul class=&quot;details&quot;&gt;
-      &lt;li&gt;blank&lt;/li&gt;
-      &lt;li&gt;blank&lt;/li&gt;
+      &lt;li&gt;Says "Full Send" a lot&lt;/li&gt;
+      &lt;li&gt;Has bought two "Saturday are for the Boys" flags&lt;/li&gt;
     &lt;/ul&gt;
     &lt;div id=&quot;btn1&quot; onclick=&quot;chooseCharac('dc1')&quot; class=&quot;buy-button&quot;&gt;
-      &lt;h3 class=&quot;btn&quot;&gt;select&lt;/h3&gt;
+      &lt;h3 class=&quot;btn&quot;&gt;Select&lt;/h3&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div id=&quot;dc2&quot; class=&quot;card&quot;&gt;
-    &lt;h6 class=&quot;type&quot;&gt;Awesome&lt;/h6&gt;
+    &lt;h6 class=&quot;type&quot;&gt;Bertha&lt;/h6&gt;
 	  &lt;img class=&quot;chs&quot; src=&quot;images/djc2.png&quot;&gt;
-    &lt;h5 class=&quot;plan&quot;&gt;Ch 2&lt;/h5&gt;
+    &lt;h5 class=&quot;plan&quot;&gt;User B&lt;/h5&gt;
     &lt;ul class=&quot;details&quot;&gt;
-      &lt;li&gt;blank&lt;/li&gt;
-      &lt;li&gt;blank&lt;/li&gt;
+      &lt;li&gt;Old&lt;/li&gt;
+      &lt;li&gt;Can barely use the internet&lt;/li&gt;
     &lt;/ul&gt;
     &lt;div id=&quot;btn2&quot; onclick=&quot;chooseCharac('dc2')&quot; class=&quot;buy-button&quot;&gt;
-      &lt;h3 class=&quot;btn&quot;&gt;select&lt;/h3&gt;
+      &lt;h3 class=&quot;btn&quot;&gt;Select&lt;/h3&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   
