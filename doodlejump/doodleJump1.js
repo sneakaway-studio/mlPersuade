@@ -2,9 +2,9 @@ var doodlerSize = 70;
 var doodlerX;
 var doodlerY;
 var doodlerVelocity;
-var doodlerXSpeed = 2;
+var doodlerXSpeed = 3;
 var platformWidth = 58;
-var platformHeight = 8;
+var platformHeight = 5;
 var numOfPlatforms = 5;
 var platformList = [];
 var platYChange = 0;
@@ -76,7 +76,7 @@ function mousePressed() {
     setupPlatforms();
     doodlerY = 180;
     doodlerX = platformList[platformList.length - 1].xPos + 10;
-    doodlerVelocity = 0.08;
+    doodlerVelocity = 0.15;
     gameStarted = true;
   }
 }
@@ -149,7 +149,7 @@ function checkCollision() {
       doodlerY + doodlerSize > plat.yPos &&
       doodlerVelocity > 0
     ) {
-      doodlerVelocity = -5;
+      doodlerVelocity = -10;
     }
   });
   
