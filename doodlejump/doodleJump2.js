@@ -4,7 +4,7 @@ var doodlerY;
 var doodlerVelocity;
 var doodlerXSpeed = 2;
 var platformWidth = 58;
-var platformHeight = 12;
+var platformHeight = 8;
 var numOfPlatforms = 5;
 var platformList = [];
 var platYChange = 0;
@@ -76,7 +76,7 @@ function mousePressed() {
     setupPlatforms();
     doodlerY = 350;
     doodlerX = platformList[platformList.length - 1].xPos + 10;
-    doodlerVelocity = 0.05;
+    doodlerVelocity = 0.10;
     gameStarted = true;
   }
 }
@@ -91,7 +91,7 @@ function drawDoodler() {
 
 function moveDoodler() {
   // doodler falls with gravity
-  doodlerVelocity += 0.1;
+  doodlerVelocity += 0.5;
   doodlerY += doodlerVelocity;
 
   if (keyIsDown(LEFT_ARROW)) {
