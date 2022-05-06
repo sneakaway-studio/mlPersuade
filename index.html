@@ -575,10 +575,10 @@ window.startDJ = function(){
 
 window.chooseCharac = function(id){
 	if (id == "dc1") {
-		document.getElementById('iframe').src="/doodlejump/doodle1.html";
+		document.getElementById('iframe').src="doodlejump/doodle1.html";
     var other = "dc2";
 	} else {
-		document.getElementById('iframe').src="/doodlejump/doodle2.html";
+		document.getElementById('iframe').src="doodlejump/doodle2.html";
     var other = "dc1";
 	}
 	$("#" + id).animate({width: "277px"}, {duration: 2000, queue: false});
@@ -597,7 +597,6 @@ window.chooseCharac = function(id){
 		mainEl.style.zIndex = "1";
 		startDJ();
 	}, 3000);
-	
 	
 }
 
@@ -619,26 +618,26 @@ window.chooseCharac = function(id){
 &lt;section id=&quot;choice&quot; class=&quot;pricing-table&quot;&gt;
   &lt;div id=&quot;dc1&quot; class=&quot;card&quot;&gt;
     &lt;h6 class=&quot;type&quot;&gt;basic&lt;/h6&gt;
-		&lt;img class=&quot;chs&quot; src=&quot;images//djc1left.png&quot;&gt;
+		&lt;img class=&quot;chs&quot; src=&quot;images/djc1left.png&quot;&gt;
     &lt;h5 class=&quot;plan&quot;&gt;Ch 1&lt;/h5&gt;
     &lt;ul class=&quot;details&quot;&gt;
       &lt;li&gt;blank&lt;/li&gt;
       &lt;li&gt;blank&lt;/li&gt;
     &lt;/ul&gt;
-    &lt;div id=&quot;btn1&quot; onclick=&quot;chooseCharac(this.id)&quot; class=&quot;buy-button&quot;&gt;
+    &lt;div id=&quot;btn1&quot; onclick=&quot;chooseCharac(\'' + dc1 + '\')&quot; class=&quot;buy-button&quot;&gt;
       &lt;h3 class=&quot;btn&quot;&gt;select&lt;/h3&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div id=&quot;dc2&quot; class=&quot;card&quot;&gt;
     &lt;h6 class=&quot;type&quot;&gt;Awesome&lt;/h6&gt;
-	&lt;img class=&quot;chs&quot; src=&quot;images/djc2.png&quot;&gt;
+	  &lt;img class=&quot;chs&quot; src=&quot;images/djc2.png&quot;&gt;
     &lt;h5 class=&quot;plan&quot;&gt;Ch 2&lt;/h5&gt;
     &lt;ul class=&quot;details&quot;&gt;
       &lt;li&gt;blank&lt;/li&gt;
       &lt;li&gt;blank&lt;/li&gt;
     &lt;/ul&gt;
-    &lt;div id=&quot;btn2&quot; onclick=&quot;chooseCharac(this.id)&quot; class=&quot;buy-button&quot;&gt;
+    &lt;div id=&quot;btn2&quot; onclick=&quot;chooseCharac(\'' + dc2 + '\')&quot; class=&quot;buy-button&quot;&gt;
       &lt;h3 class=&quot;btn&quot;&gt;select&lt;/h3&gt;
     &lt;/div&gt;
   &lt;/div&gt;
