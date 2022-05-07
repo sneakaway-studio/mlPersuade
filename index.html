@@ -515,6 +515,15 @@ img.posit{
 	}
 }
 
+#ygif {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+}
+
 
 .dJump {
   z-index: 1;
@@ -575,9 +584,14 @@ window.youTube = function(){
 }
 
 window.startDJ = function(){
-		document.getElementById('iframe').style.zIndex="105";
-		document.getElementById('iframe').style.animationPlayState = "running";
-    document.getElementById('djdiv').style.zIndex="105";
+    document.getElementById('ygif').src = "images/ytc1.gif";
+    document.getElementById('ygif').style.zIndex = "101";
+    setTimeout(function(){
+      document.getElementById('ygif').style.display = "none";
+      document.getElementById('iframe').style.zIndex="105";
+		  document.getElementById('iframe').style.animationPlayState = "running";
+      document.getElementById('djdiv').style.zIndex="105";
+    }, 14000);
 
 	
 }
@@ -660,6 +674,8 @@ window.chooseCharac = function(id){
 &lt;img id=&quot;yt&quot; src=&quot;images/ytload.png&quot; class=&quot;yt pp&quot;&gt;
 
 &lt;img id=&quot;ytlo&quot; src=&quot;images/ytlogo.png&quot; class=&quot;ytlogo&quot;&gt;
+
+&lt;img id=&quot;ygif&quot; src=&quot;images/ytlogo.png&quot;&gt;
 
 &lt;map name=&quot;screenmap&quot;&gt;
 &lt;area shape=&quot;rect&quot; coords=&quot;15,35,60,80&quot; alt=&quot;fbook&quot; href=&quot;javascript:stopPhone()&quot;&gt;
