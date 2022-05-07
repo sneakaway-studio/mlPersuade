@@ -517,17 +517,18 @@ img.posit{
   z-index: 0;
   top: 100px;
   left: 0;
-  display : "none";
+  display : none;
 }
 
 #yvid {
-  z-index: 2;
+  z-index: 0;
   width: 277px;
   height: 500px;
   position: absolute;
   top: 0;
   left: 0;
   background: black;
+  display: none;
 }
 
 .dJump {
@@ -541,8 +542,6 @@ img.posit{
 
 
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">importStyles("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
-
-importStyles("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 
 window.stopPhone = function(){
 	const ph = document.getElementsByClassName('iphone');
@@ -622,10 +621,6 @@ window.chooseCharac = function(id){
 	const hs = document.getElementById("sc");
 	yt.style.zIndex = "0";
 	hs.style.zIndex = "0";
-	const othEl = document.getElementById(other);
-	setTimeout(function(){
-		othEl.style.zIndex = "0";
-	}, 1000);
 	setTimeout(function(){
 		$(".chs").animate({width: "500px", height: "250px", opacity: "0%"}, {duration: 1500, queue: false});
 		const mainEl = document.getElementById("choice");
@@ -674,7 +669,7 @@ window.chooseCharac = function(id){
 
 &lt;div id=&quot;yvid&quot;&gt;
 
-&lt;video id=&quot;video1&quot; width=&quot;480&quot; height=&quot;300&quot;&gt;
+&lt;video id=&quot;video1&quot; width=&quot;480px&quot; height=&quot;300px&quot;&gt;
 
   &lt;source src=&quot;images/ytc1.mp4&quot; type=&quot;video/mp4&quot;&gt;
 
