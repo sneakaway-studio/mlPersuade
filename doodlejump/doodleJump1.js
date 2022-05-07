@@ -23,7 +23,7 @@ var img;
 
 
 function preload() {
-  backgroundImg = loadImage("https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Graph-paper.svg/1024px-Graph-paper.svg.png");
+  backgroundImg = loadImage("../images/spaceb.png");
   platformImg = loadImage("https://raw.githubusercontent.com/JasonMize/coding-league-assets/master/doodle-jump-platform.png");
   doodlerLeftImg = loadImage("../images/djc1left.png");
   doodlerRightImg = loadImage("../images/djc1right.png");
