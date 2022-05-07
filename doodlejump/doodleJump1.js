@@ -63,7 +63,7 @@ function draw() {
     textSize(12);
     text("HIGH SCORE: " + highScore, 160, 22);
     fill('#e5e4e2');
-    text("Use LEFT & RIGHT arrow keys to move", 10, 280);
+    text("Use LEFT & RIGHT arrow keys to move", 10, 100);
     fill("#ff6961");
     textSize(20);
     text("Avoid being hit", 50, 330);
