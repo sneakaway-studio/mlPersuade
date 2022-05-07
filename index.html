@@ -529,12 +529,10 @@ img.posit{
 	}
 }
 
-#ygif {
+#video1 {
   position: absolute;
   z-index: 0;
-  width: 100%;
-  height: auto;
-  top: 0;
+  top: 100px;
   left: 0;
   display = "none";
 }
@@ -601,10 +599,14 @@ window.youTube = function(){
 }
 
 window.startDJ = function(){
-    document.getElementById('ygif').style.display= "box";
-    document.getElementById('ygif').style.zIndex = "101";
+    var myVideo = document.getElementById("video1"); 
+    myVideo.style.display= "box";
+    myVideo.style.zIndex = "101";
+    myVideo.play();
     setTimeout(function(){
-      document.getElementById('ygif').style.display = "none";
+      myVideo.pause();
+      myVideo.style.display= "none";
+      myVideo.style.zIndex = "1";
       document.getElementById('iframe').style.zIndex="105";
       document.getElementById('iframe').style.animationPlayState = "running";
       document.getElementById('djdiv').style.zIndex="105";
@@ -659,7 +661,7 @@ window.chooseCharac = function(id){
 &lt;section id=&quot;choice&quot; class=&quot;pricing-table&quot;&gt;
   &lt;div id=&quot;dc1&quot; class=&quot;card&quot;&gt;
     &lt;h6 class=&quot;type&quot;&gt;Justin&lt;/h6&gt;
-		&lt;img class=&quot;chs&quot; src=&quot;images/djc1left.png&quot;&gt;
+    &lt;img class=&quot;chs&quot; src=&quot;images/djc1left.png&quot;&gt;
     &lt;h5 class=&quot;plan&quot;&gt;User A&lt;/h5&gt;
     &lt;ul class=&quot;details&quot;&gt;
       &lt;li&gt;Says "Full Send" a lot&lt;/li&gt;
@@ -692,7 +694,9 @@ window.chooseCharac = function(id){
 
 &lt;img id=&quot;ytlo&quot; src=&quot;images/ytlogo.png&quot; class=&quot;ytlogo&quot;&gt;
 
-&lt;x-gif src=&quot;images/ytc1.gif&quot;&gt;&lt;/x-gif>&quot;&gt;
+&lt;video id=&quot;video1&quot; width=&quot;480&quot; height=&quot;300&quot;&gt;
+  &lt;source src=&quot;ytc1.mp4&quot; type=&quot;video/mp4&quot;&gt;
+&lt;/video&gt;
 
 &lt;map name=&quot;screenmap&quot;&gt;
 &lt;area shape=&quot;rect&quot; coords=&quot;15,35,60,80&quot; alt=&quot;fbook&quot; href=&quot;javascript:stopPhone()&quot;&gt;
