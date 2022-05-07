@@ -584,12 +584,12 @@ window.youTube = function(){
 }
 
 window.startDJ = function(){
-    document.getElementById('ygif').src = "images/ytc1.gif";
+    document.getElementById('ygif').src = "images/images/ytc1.gif";
     document.getElementById('ygif').style.zIndex = "101";
     setTimeout(function(){
       document.getElementById('ygif').style.display = "none";
       document.getElementById('iframe').style.zIndex="105";
-		  document.getElementById('iframe').style.animationPlayState = "running";
+      document.getElementById('iframe').style.animationPlayState = "running";
       document.getElementById('djdiv').style.zIndex="105";
     }, 14000);
 
@@ -616,7 +616,7 @@ window.chooseCharac = function(id){
 		othEl.style.zIndex = "0";
 	}, 1000);
 	setTimeout(function(){
-		$(".chs").animate({width: "500px", height: "250px", opacity: "0%"}, {duration: 3000, queue: false});
+		$(".chs").animate({width: "500px", height: "250px", opacity: "0%"}, {duration: 1500, queue: false});
 		const mainEl = document.getElementById("choice");
 		mainEl.style.zIndex = "1";
 		startDJ();
