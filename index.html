@@ -368,7 +368,16 @@ img.posit{
   animation-play-state: paused;
 }
 
-#iframe {
+#iframe1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fadeIn 1s backwards;
+  animation-play-state: paused;
+  z-index:1;
+}
+
+#iframe2 {
   position: absolute;
   top: 0;
   left: 0;
@@ -391,6 +400,9 @@ img.posit{
 #btn1{
   background: linear-gradient(to right, #7288ff, #bfb9ff, #8564ff);
 }
+#btn11{
+  background: linear-gradient(to right, #7288ff, #bfb9ff, #8564ff);
+}
 
 
 .pricing-table {
@@ -406,8 +418,11 @@ img.posit{
 #dc1 {
   background: linear-gradient(to right, #ff2f2f, #ff0f5b, #ffeaf1);
 }
+#dc11 {
+  background: linear-gradient(to right, #ff2f2f, #ff0f5b, #ffeaf1);
+}
 
- .pricing-table .card {
+.pricing-table .card {
 	 width: 0px;
 	 height: 500px;
 	 display: flex;
@@ -511,6 +526,120 @@ img.posit{
 	}
 }
 
+.pricing-table1 {
+	 position: absolute;
+	 width: 100%;
+	 display: none;
+   top: 0;
+   left: 0;
+   font-family: spaceF;
+   color: #191970;
+}
+
+.pricing-table1 .card1 {
+	 width: 0px;
+	 height: 500px;
+	 display: flex;
+	 flex-direction: column;
+	 align-items: center;
+	 position: relative;
+	 overflow: hidden;
+	 box-shadow: 2px 2px 46px -4px rgba(0, 0, 0, 0.6);
+	 transition: all 0.2s ease-in-out;
+}
+
+.pricing-table1 .card1 .type1 {
+	 margin-top: 30px;
+	 letter-spacing: 0.1rem;
+   font-size: 25px;
+   margin-bottom: 0;
+}
+ 
+ .pricing-table1 .card1 .plan1 {
+	 font-size: 1.3rem;
+	 position: absolute;
+   bottom: 10%;
+}
+ .pricing-table1 .card1 .plan1::before, .pricing-table1 .card1 .plan1::after {
+	 position: absolute;
+	 content: "";
+	 width: 35px;
+	 height: 2px;
+	 background: #fff;
+	 bottom: 40%;
+	 transition: all 0.2s ease-out;
+}
+ .pricing-table1 .card1 .plan1::before {
+	 right: 100%;
+	 transform: translate(-50%, -50%);
+}
+ .pricing-table1 .card1 .plan1::after {
+	 right: -100%;
+	 transform: translate(0%, -50%);
+}
+ .pricing-table1 .card1 .details1 {
+	 text-transform: capitalize;
+   margin-top: 0;
+   position: absolute;
+   top: 50%;
+   padding-inline-start: 0px;
+   font-size: 15px;
+   list-style-type: none;
+   text-align: center;
+}
+ .pricing-table1 .card1 .buy-button1 {
+	 cursor: pointer;
+	 position: absolute;
+	 width: 100%;
+	 height: 15%;
+	 border-radius: 15%;
+	 bottom: 0;
+	 transition: all 0.4s ease-in-out;
+}
+ .pricing-table1 .card1 .buy-button1 h3 {
+	 text-shadow: 0 0 0;
+	 text-decoration: none;
+	 color: #fff;
+	 position: absolute;
+	 left: 20%;
+	 top: 5%;
+	 color: #333745;
+	 font-size: 1.2rem;
+	 transition: all 0.4s ease-in-out;
+}
+ .pricing-table1 .card1:hover {
+	 transform: scale(1.02);
+}
+ .pricing-table1 .card1:hover .price1::before {
+	 animation: text-hover 1s ease-in-out infinite normal;
+}
+ .pricing-table1 .card1:hover .plan1::before {
+	 right: 90%;
+}
+ .pricing-table1 .card1:hover .plan1::after {
+	 right: -90%;
+}
+ .pricing-table1 .card1:hover .buy-button1 {
+	 width: 100%;
+	 right: 0%;
+	 border-radius: 0%;
+}
+ .pricing-table1 .card1:hover .buy-button1 h3 {
+	 left: 50%;
+	 transform: translate(-50%, 0%);
+}
+ @keyframes text-hover {
+	 0% {
+		 right: -30%;
+	}
+	 50% {
+		 right: -37%;
+	}
+	 100% {
+		 right: -30%;
+	}
+}
+
 #video1 {
   position: absolute;
   top: 100px;
@@ -536,6 +665,14 @@ img.posit{
   top: 0;
   left: 0;
 }
+.frog {
+  z-index: 1;
+  width: 277px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">importStyles("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
@@ -553,6 +690,19 @@ window.stopPhone = function(){
 			const logo = document.getElementById("flog");
 			logo.style.animationPlayState = "running";
 	}, 1000);
+  setTimeout(function(){
+		$(".posit").animate({height: "740px", width: "626px"}, {duration: 1000, queue: false});
+		$(".iphone").animate({height: "715px", width: "625px"}, {duration: 1000, queue: false});
+		$(".fb, .hscreen, .screen").animate({height: "500px", width: "277px"}, {duration: 1000, queue: false});
+		$(".screen").animate({left:"178px", top:"74px"}, {duration: 1000, queue: false});
+		$(".iphone").animate({top:"-90px"}, {duration: 1000, queue: false});
+		$(".card1").animate({width: "100%"}, {duration: 1000, queue: false});
+    const homeb1 = document.getElementById('homeb');
+    homeb1.coords = "(310, 615, 30)";
+		const pt1 = document.getElementById("choice1");
+		pt1.style.display = "flex";
+		pt1.style.zIndex = "102";
+	}, 4000);
 
 }
 
@@ -595,19 +745,33 @@ window.startDJ = function(){
     function myHandler(e){
       myVideo.pause();
       document.getElementById('yvid').style.display = "none"
-      document.getElementById('iframe').style.zIndex="105";
-      document.getElementById('iframe').style.animationPlayState = "running";
+      document.getElementById('iframe1').style.zIndex="105";
+      document.getElementById('iframe1').style.animationPlayState = "running";
       setTimeout(function(){
         document.getElementById('djdiv').style.zIndex="105";
       }, 1000);
-  }
+    }
+}
 
-	
+window.startFr = function(){
+  const myVideo = document.getElementById("video1"); 
+  document.getElementById('yvid').style.display = "block";
+  myVideo.play();
+  myVideo.addEventListener('ended',myHandler,false);
+  function myHandler(e){
+    myVideo.pause();
+    document.getElementById('yvid').style.display = "none"
+    document.getElementById('iframe2').style.zIndex="105";
+    document.getElementById('iframe2').style.animationPlayState = "running";
+    setTimeout(function(){
+      document.getElementById('yvid').style.zIndex="105";
+    }, 1000);
+  }
 }
 
 
 window.chooseCharac = function(id){
-	document.getElementById('iframe').src="doodlejump/doodle1.html";
+	document.getElementById('iframe1').src="doodlejump/doodle1.html";
 	const yt = document.getElementById("yt");
 	const hs = document.getElementById("sc");
 	yt.style.zIndex = "0";
@@ -616,6 +780,17 @@ window.chooseCharac = function(id){
 	document.getElementById("choice").style.zIndex = "1";
 	startDJ();
 	
+}
+
+window.chooseCharac1 = function(id){
+	document.getElementById('iframe2').src="frogger/frogger.html";
+	const fb = document.getElementById("fbl");
+	const hs = document.getElementById("sc");
+	yt.style.zIndex = "0";
+	hs.style.zIndex = "0";
+	$("#choice1").animate({opacity: "0%"}, {duration: 1000, queue: false});
+	document.getElementById("choice1").style.zIndex = "1";
+	startFr();
 }
 
 </script><tw-passagedata pid="1" name="Begin" tags="script" position="937,377.6666666666667" size="100,100">&lt;div id=&quot;phd&quot; class=&quot;iphone pp&quot;&gt;
@@ -645,10 +820,29 @@ window.chooseCharac = function(id){
   &lt;/div&gt;
 &lt;/section&gt;
 
+&lt;section id=&quot;choice1&quot; class=&quot;pricing-table1&quot;&gt;
+  &lt;div id=&quot;dc11&quot; class=&quot;card1&quot;&gt;
+    &lt;h6 class=&quot;type1&quot;&gt;Your Character&lt;/h6&gt;
+    &lt;img class=&quot;chs1&quot; src=&quot;images/pixmom.png&quot;&gt;
+    &lt;h5 class=&quot;plan1&quot;&gt;Justin&lt;/h5&gt;
+    &lt;ul class=&quot;details1&quot;&gt;
+      &lt;li&gt;Says "Full Send" a lot&lt;/li&gt;
+      &lt;li&gt;Has bought two "Saturday are for the Boys" flags&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div id=&quot;btn11&quot; onclick=&quot;chooseCharac1('dc11')&quot; class=&quot;buy-button1&quot;&gt;
+      &lt;h3 class=&quot;btn1&quot;&gt;Start&lt;/h3&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
 &lt;div id=&quot;djdiv&quot; class=&quot;dJump&quot;&gt;
 
-&lt;iframe height=&quot;500&quot; width=&quot;277&quot; id=&quot;iframe&quot;&gt;&lt;/iframe&gt;
+&lt;iframe height=&quot;500&quot; width=&quot;277&quot; id=&quot;iframe1&quot;&gt;&lt;/iframe&gt;
 
+&lt;/div&gt;
+
+&lt;div id=&quot;fdiv&quot; class=&quot;frog&quot;&gt;
+&lt;iframe height=&quot;500&quot; width=&quot;277&quot; id=&quot;iframe2&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;img id=&quot;yt&quot; src=&quot;images/ytload.png&quot; class=&quot;yt pp&quot;&gt;
