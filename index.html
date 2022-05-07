@@ -32,6 +32,20 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
+	
+	
+<script>
+  if ('registerElement' in document
+    && 'createShadowRoot' in HTMLElement.prototype
+    && 'import' in document.createElement('link')
+    && 'content' in document.createElement('template')) {
+    // We're using a browser with native WC support!
+  } else {
+    document.write('<script src="https:\/\/cdnjs.cloudflare.com/ajax/libs/polymer/0.3.4/platform.js"><\/script>')
+  }
+</script>
+<link rel="import" href="x-gif.html">
+	
 <script id="script-libraries" type="text/javascript">
 if(document.head&&document.addEventListener&&document.querySelector&&Object.create&&Object.freeze&&JSON){document.documentElement.setAttribute("data-init", "loading");
 /*! @source http://purl.eligrey.com/github/classList.js/blob/1.2.20171210/classList.js */
@@ -536,6 +550,8 @@ img.posit{
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">importStyles("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 
+importStyles("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
+
 window.stopPhone = function(){
 	const ph = document.getElementsByClassName('iphone');
 	for (let i = 0; i < ph.length; i++){
@@ -676,7 +692,7 @@ window.chooseCharac = function(id){
 
 &lt;img id=&quot;ytlo&quot; src=&quot;images/ytlogo.png&quot; class=&quot;ytlogo&quot;&gt;
 
-&lt;img id=&quot;ygif&quot; src=&quot;images/images/ytc1.gif&quot;&gt;
+&lt;x-gif src=&quot;images/ytc1.gif&quot;&gt;&lt;/x-gif>&quot;&gt;
 
 &lt;map name=&quot;screenmap&quot;&gt;
 &lt;area shape=&quot;rect&quot; coords=&quot;15,35,60,80&quot; alt=&quot;fbook&quot; href=&quot;javascript:stopPhone()&quot;&gt;
