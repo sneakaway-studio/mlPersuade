@@ -522,6 +522,7 @@ img.posit{
   height: auto;
   top: 0;
   left: 0;
+  display = "none";
 }
 
 
@@ -584,7 +585,7 @@ window.youTube = function(){
 }
 
 window.startDJ = function(){
-    document.getElementById('ygif').src = "images/images/ytc1.gif";
+    document.getElementById('ygif').style.display= "box";
     document.getElementById('ygif').style.zIndex = "101";
     setTimeout(function(){
       document.getElementById('ygif').style.display = "none";
@@ -675,7 +676,7 @@ window.chooseCharac = function(id){
 
 &lt;img id=&quot;ytlo&quot; src=&quot;images/ytlogo.png&quot; class=&quot;ytlogo&quot;&gt;
 
-&lt;img id=&quot;ygif&quot; src=&quot;images/ytlogo.png&quot;&gt;
+&lt;img id=&quot;ygif&quot; src=&quot;images/images/ytc1.gif&quot;&gt;
 
 &lt;map name=&quot;screenmap&quot;&gt;
 &lt;area shape=&quot;rect&quot; coords=&quot;15,35,60,80&quot; alt=&quot;fbook&quot; href=&quot;javascript:stopPhone()&quot;&gt;
