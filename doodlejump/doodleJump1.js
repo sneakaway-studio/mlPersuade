@@ -16,6 +16,7 @@ var doodlerRightImg;
 var platformImg;
 var backgroundImg;
 var img;
+var spaceF;
 
 // ===========================
 //  Preload the Image Sprites
@@ -27,6 +28,7 @@ function preload() {
   platformImg = loadImage("https://raw.githubusercontent.com/JasonMize/coding-league-assets/master/doodle-jump-platform.png");
   doodlerLeftImg = loadImage("../images/djc1left.png");
   doodlerRightImg = loadImage("../images/djc1right.png");
+  spaceF = loadFont('../images/SpaceSurf.ttf');
 }
 
 // ===========================
@@ -51,13 +53,26 @@ function draw() {
     moveScreen();
   } else {
     // Start menu
-    fill("#AAF0D1");
-    textSize(30);
-    text("Start", 105, 87);
+    fill('#AAF0D1');
+    textFont(spaceF);
+    textSize(25);
+    text("CLICK TO START", 20, 200);
+    textFont("Space Mono");
     textSize(17);
-    text("Score: " + score, 3, 22);
-    textSize(15);
-    text("High Score: " + highScore, 169, 22);
+    text("SCORE: " + score, 3, 22);
+    textSize(12);
+    text("HIGH SCORE: " + highScore, 160, 22);
+    fill('#e5e4e2');
+    text("Use LEFT & RIGHT arrow keys to move", 10, 280);
+    fill("#ff6961");
+    textSize(20);
+    text("Avoid being hit", 50, 330);
+    textSize(18);
+    text("by the videos to escape", 15, 360);
+    textSize(23);
+    text("the Youtube Rabbit", 15, 390);
+    textSize(38)
+    text("Hole", 80, 430);
   }
 }
 

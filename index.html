@@ -105,6 +105,11 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
   	background-color: #D4EFFF;
 }
 
+@font-face {
+    font-family: spaceF;
+    src: url("images/SpaceSurf.ttf");
+}
+
 #ui-bar {
 	display: none;
 }
@@ -153,16 +158,6 @@ text.intro {
   position:absolute;
   bottom: 16px;
   opacity: 50%;
-}
-
-.demo {
-  position: relative;
-  bottom: 700px;
-  font-family: "Lucida Console", "Courier New", monospace;
-  font-size: 30px;
-  color: red;
-  z-index: 105;
-  text-align: center;
 }
 
 
@@ -377,7 +372,7 @@ img.posit{
   position: absolute;
   top: 0;
   left: 0;
-  animation: fadeIn 2s 2s backwards;
+  animation: fadeIn 1s backwards;
   animation-play-state: paused;
   z-index:1;
 }
@@ -400,10 +395,12 @@ img.posit{
 
 .pricing-table {
 	 position: absolute;
-	 top: 50%;
-	 left: 50%;
-	 transform: translate(-50%, -50%);
+	 width: 100%;
 	 display: none;
+   top: 0;
+   left: 0;
+   font-family: spaceF;
+   color: #191970;
 }
 
 #dc1 {
@@ -425,6 +422,8 @@ img.posit{
 .pricing-table .card .type {
 	 margin-top: 30px;
 	 letter-spacing: 0.1rem;
+   font-size: 25px;
+   margin-bottom: 0;
 }
  
  .pricing-table .card .plan {
@@ -514,14 +513,12 @@ img.posit{
 
 #video1 {
   position: absolute;
-  z-index: 0;
   top: 100px;
   left: 0;
-  display : none;
 }
 
 #yvid {
-  z-index: 0;
+  z-index: 101;
   width: 277px;
   height: 500px;
   position: absolute;
@@ -577,14 +574,13 @@ window.youTube = function(){
 	setTimeout(function(){
 		$(".posit").animate({height: "740px", width: "626px"}, {duration: 1000, queue: false});
 		$(".iphone").animate({height: "715px", width: "625px"}, {duration: 1000, queue: false});
-		$(".yt, .hscreen, .screen").animate({height: "500px", width: "277px"}, 1000);
+		$(".yt, .hscreen, .screen").animate({height: "500px", width: "277px"}, {duration: 1000, queue: false});
 		$(".screen").animate({left:"178px", top:"74px"}, {duration: 1000, queue: false});
 		$(".iphone").animate({top:"-90px"}, {duration: 1000, queue: false});
-		$(".card").animate({width: "100%""}, {duration: 1000, queue: false});
+		$(".card").animate({width: "100%"}, {duration: 1000, queue: false});
     const homeb = document.getElementById('homeb');
     homeb.coords = "(310, 615, 30)";
-		const pt = document.getElementById('choice');
-		const child = document.getElementById('child');
+		const pt = document.getElementById("choice");
 		pt.style.display = "flex";
 		pt.style.zIndex = "102";
 	}, 4000);
@@ -592,41 +588,33 @@ window.youTube = function(){
 }
 
 window.startDJ = function(){
-    const mainEl = document.getElementById("choice");
     const myVideo = document.getElementById("video1"); 
-
-    myVideo.style.display= "box";
-    myVideo.style.zIndex = "101";
+    document.getElementById('yvid').style.display = "block";
     myVideo.play();
-    setTimeout(function(){
+    myVideo.addEventListener('ended',myHandler,false);
+    function myHandler(e){
       myVideo.pause();
-      myVideo.style.display= "none";
-      myVideo.style.zIndex = "1";
+      document.getElementById('yvid').style.display = "none"
       document.getElementById('iframe').style.zIndex="105";
       document.getElementById('iframe').style.animationPlayState = "running";
-      document.getElementById('djdiv').style.zIndex="105";
-    }, 14000);
+      setTimeout(function(){
+        document.getElementById('djdiv').style.zIndex="105";
+      }, 1000);
+  }
 
 	
 }
 
 
 window.chooseCharac = function(id){
-	if (id == "dc1") {
-		document.getElementById('iframe').src="doodlejump/doodle1.html";
-    var other = "dc2";
-  }
-	$("#" + id).animate({width: "277px"}, {duration: 1000, queue: false});
+	document.getElementById('iframe').src="doodlejump/doodle1.html";
 	const yt = document.getElementById("yt");
 	const hs = document.getElementById("sc");
 	yt.style.zIndex = "0";
 	hs.style.zIndex = "0";
-	setTimeout(function(){
-		$(".chs").animate({width: "500px", height: "250px", opacity: "0%"}, {duration: 1500, queue: false});
-		const mainEl = document.getElementById("choice");
-		mainEl.style.zIndex = "1";
-		startDJ();
-	}, 1500);
+	$("#choice").animate({opacity: "0%"}, {duration: 1000, queue: false});
+	document.getElementById("choice").style.zIndex = "1";
+	startDJ();
 	
 }
 
@@ -669,7 +657,7 @@ window.chooseCharac = function(id){
 
 &lt;div id=&quot;yvid&quot;&gt;
 
-&lt;video id=&quot;video1&quot; width=&quot;480px&quot; height=&quot;300px&quot;&gt;
+&lt;video id=&quot;video1&quot; width=&quot;300&quot;&gt;
 
   &lt;source src=&quot;images/ytc1.mp4&quot; type=&quot;video/mp4&quot;&gt;
 
