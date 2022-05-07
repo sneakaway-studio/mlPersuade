@@ -522,6 +522,7 @@ img.posit{
   height: auto;
   top: 0;
   left: 0;
+  display = "none";
 }
 
 
@@ -584,12 +585,12 @@ window.youTube = function(){
 }
 
 window.startDJ = function(){
-    document.getElementById('ygif').src = "images/ytc1.gif";
+    document.getElementById('ygif').style.display= "box";
     document.getElementById('ygif').style.zIndex = "101";
     setTimeout(function(){
       document.getElementById('ygif').style.display = "none";
       document.getElementById('iframe').style.zIndex="105";
-		  document.getElementById('iframe').style.animationPlayState = "running";
+      document.getElementById('iframe').style.animationPlayState = "running";
       document.getElementById('djdiv').style.zIndex="105";
     }, 14000);
 
@@ -616,7 +617,7 @@ window.chooseCharac = function(id){
 		othEl.style.zIndex = "0";
 	}, 1000);
 	setTimeout(function(){
-		$(".chs").animate({width: "500px", height: "250px", opacity: "0%"}, {duration: 3000, queue: false});
+		$(".chs").animate({width: "500px", height: "250px", opacity: "0%"}, {duration: 1500, queue: false});
 		const mainEl = document.getElementById("choice");
 		mainEl.style.zIndex = "1";
 		startDJ();
@@ -675,7 +676,7 @@ window.chooseCharac = function(id){
 
 &lt;img id=&quot;ytlo&quot; src=&quot;images/ytlogo.png&quot; class=&quot;ytlogo&quot;&gt;
 
-&lt;img id=&quot;ygif&quot; src=&quot;images/ytlogo.png&quot;&gt;
+&lt;img id=&quot;ygif&quot; src=&quot;images/images/ytc1.gif&quot;&gt;
 
 &lt;map name=&quot;screenmap&quot;&gt;
 &lt;area shape=&quot;rect&quot; coords=&quot;15,35,60,80&quot; alt=&quot;fbook&quot; href=&quot;javascript:stopPhone()&quot;&gt;
