@@ -51,7 +51,7 @@ function draw() {
     moveScreen();
   } else {
     // Start menu
-    fill(0);
+    fill("#AAF0D1");
     textSize(30);
     text("Start", 105, 87);
     textSize(17);
