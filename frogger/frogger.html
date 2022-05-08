@@ -4,13 +4,14 @@
   <title>Basic Frogger HTML Game</title>
   <meta charset="UTF-8">
   <style>
+
   html, body {
     height: 100%;
     margin: 0;
   }
 
   body {
-    background: black;
+    background: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,8 +19,8 @@
   </style>
 </head>
 <body>
-<canvas width="624" height="720" id="game"></canvas>
-<script>
+<canvas width="277" height="490" id="game"></canvas>
+<script>  
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
 var vac = new Image();
@@ -28,8 +29,32 @@ var novax = new Image();
 novax.src = "../images/novax.png";
 var c = new Image();
 c.src = "../images/pixmom.png";
+var trump = new Image();
+trump.src = "../images/tpixel.png";
+var fnews = new Image();
+fnews.src = "../images/fnews.png";
+var bshapiro = new Image();
+bshapiro.src = "../images/herb.png";
+var flogin = new Image();
+flogin.src = "../images/flogin.png";
+var feed = new Image();
+feed.src = "../images/scroll.gif";
+var cdc = new Image();
+cdc.src = "../images/cdc.png";
+var void1 = new Image();
+void1.src = "../images/void.jpeg";
+var docs = new Image();
+docs.src = "../images/doctors.png";
+var sdist = new Image();
+sdist.src = "../images/sdist.png";
+var meds = new Image();
+meds.src = "../images/meds.png";
 
-const grid = 48;
+
+
+
+
+const grid = 35;
 const gridGap = 10;
 
 // a simple sprite prototype function
@@ -50,8 +75,29 @@ Sprite.prototype.render = function() {
     context.drawImage(novax,this.x, this.y + gridGap / 2, this.size, grid - gridGap);
   }
 
-  else if (this.shape == "charac"){
-    context.drawImage(c,this.x, this.y + gridGap / 2, this.size, grid - gridGap);
+  else if (this.shape == 'charac'){
+    context.drawImage(c, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
+  }
+  else if (this.shape == 'trump'){
+    context.drawImage(trump, this.x , this.y + gridGap / 2, this.size , grid - gridGap);
+  }
+  else if (this.shape == 'fnews'){
+    context.drawImage(fnews, this.x , this.y + gridGap / 2, this.size , grid - gridGap);
+  }
+  else if (this.shape == 'bshapiro'){
+    context.drawImage(bshapiro, this.x , this.y + gridGap / 2, this.size , grid - gridGap);
+  }
+  else if (this.shape == 'cdc'){
+    context.drawImage(cdc, this.x , this.y + gridGap / 2, this.size , grid - gridGap);
+  }
+  else if (this.shape == 'docs'){
+    context.drawImage(docs, this.x , this.y + gridGap / 2, this.size , grid - gridGap);
+  }
+  else if (this.shape == 'sdist'){
+    context.drawImage(sdist, this.x , this.y + gridGap / 2, this.size , grid - gridGap);
+  }
+  else if (this.shape == 'meds'){
+    context.drawImage(meds, this.x , this.y + gridGap / 2, this.size , grid - gridGap);
   }
   // draw a circle sprite. since size is the diameter we need to divide by 2
   // to get the radius. also the x/y position needs to be centered instead of
@@ -67,9 +113,9 @@ Sprite.prototype.render = function() {
 }
 
 const frogger = new Sprite({
-  x: grid * 6,
-  y: grid * 13,
-  size: 60,
+  x: grid * 6, //288
+  y: grid * 13,  //624
+  size: 40,
   shape: 'charac'
 });
 const scoredFroggers = [];
@@ -93,7 +139,7 @@ const patterns = [
     spacing: [0,2,0,2,0,2,0,4],
     color: '#de0004',
     size: grid,
-    shape: 'circle',
+    shape: 'trump',
     speed: -1
   },
 
@@ -111,7 +157,7 @@ const patterns = [
     spacing: [3],
     color: '#c55843',
     size: grid * 3,
-    shape: 'rect',
+    shape: 'fnews',
     speed: 0.5
   },
 
@@ -119,48 +165,47 @@ const patterns = [
   {
     spacing: [0,0,1],
     color: '#de0004',
-    size: grid,
-    shape: 'circle',
+    size: grid*1.5,
+    shape: 'bshapiro',
     speed: -1
   },
-
-  // beach is safe
   null,
+  // beach is safe
 
   // truck
   {
     spacing: [3,8],
     color: '#c2c4da',
-    size: grid * 2,
+    size: grid * 3,
     shape: 'rect',
     speed: -1
   },
 
   // fast car
   {
-    spacing: [14],
+    spacing: [3, 3, 3, 3, 3],
     color: '#c2c4da',
-    size: grid,
-    shape: 'rect',
-    speed: 0.75
+    size: grid * 2,
+    shape: 'docs',
+    speed: 1.8
   },
 
   // car
   {
     spacing: [3,3,7],
     color: '#de3cdd',
-    size: grid,
-    shape: 'rect',
-    speed: -0.75
+    size: grid*4,
+    shape: 'sdist',
+    speed: -1.0
   },
 
   // bulldozer
   {
     spacing: [3,3,7],
     color: '#0bcb00',
-    size: grid,
-    shape: 'rect',
-    speed: 0.5
+    size: grid*3,
+    shape: 'cdc',
+    speed: 0.9
   },
 
   // car
@@ -168,9 +213,10 @@ const patterns = [
     spacing: [4],
     color: '#e5e401',
     size: grid,
-    shape: 'rect',
+    shape: 'meds',
     speed: -0.5
   },
+
 
   // start zone is safe
   null
@@ -224,31 +270,43 @@ function loop() {
 
   // draw the game background
   // water
-  context.fillStyle = '#000047';
-  context.fillRect(0, grid, canvas.width, grid * 6);
+  context.globalAlpha = 0.5;
+  context.drawImage(void1, 0, grid, canvas.width, grid * 7);
+  context.globalAlpha = 1.0;
 
   // end bank
   context.fillStyle = '#1ac300';
-  context.fillRect(0, grid, canvas.width, 5);
-  context.fillRect(0, grid, 5, grid);
-  context.fillRect(canvas.width - 5, grid, 5, grid);
-  for (let i = 0; i < 4; i++) {
-    context.fillRect(grid + grid * 3 * i, grid, grid * 2, grid);
-  }
-
+  context.fillRect(0, grid, canvas.width/5, grid);
+  context.fillRect((canvas.width/5) * 2, grid, canvas.width/5, grid);
+  context.fillRect((canvas.width/5) * 4, grid, canvas.width/5, grid);
   // beach
   context.fillStyle = '#8500da';
   context.fillRect(0, 7 * grid, canvas.width, grid);
+  context.globalAlpha = 0.5;
+  context.drawImage(feed, 0, 8 * grid, canvas.width, grid*5);
 
   // start zone
-  context.fillRect(0, canvas.height - grid * 2, canvas.width, grid);
+  context.globalAlpha = 0.7;
+  context.drawImage(flogin, 0, canvas.height - grid * 1, canvas.width, grid);
+  context.globalAlpha = 1.0;
+  context.font = "40px Krungthep Bold";
+  context.fillStyle = "#5fa7ff";
+  context.textAlign = "center";
+  context.fillText("THE FEED", 3.6*grid , grid*11);
+  context.fillStyle = "#ea1953";
+  context.globalAlpha = 0.7;
+  context.fillText("VOID", 3.8*grid , grid*3.3);
+  context.fillText("of", 3.8*grid , grid*4.3);
+  context.fillText("FAKE NEWS", 3.8*grid , grid*5.3);
+  context.globalAlpha = 1.0;
+
 
   // update and draw obstacles
   for (let r = 0; r < rows.length; r++) {
     const row = rows[r];
 
     for (let i = 0; i < row.length; i++) {
-      const sprite = row[i]
+      const sprite = row[i];
       sprite.x += sprite.speed;
       sprite.render();
 
@@ -301,7 +359,7 @@ function loop() {
   scoredFroggers.forEach(frog => frog.render());
 
   // check for collision with all sprites in the same row as frogger
-  const froggerRow = frogger.y / grid - 1 | 0;
+  const froggerRow = frogger.y / grid -1;
   let collision = false;
   for (let i = 0; i < rows[froggerRow].length; i++) {
     let sprite = rows[froggerRow][i];
