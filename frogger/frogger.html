@@ -380,7 +380,7 @@ function loop() {
       collision = true;
 
       // reset frogger if got hit by car
-      if (froggerRow > rows.length / 2) {
+      if (froggerRow >= rows.length / 2) {
         frogger.x = grid * 6;
         frogger.y = grid * 13;
       }
@@ -412,8 +412,8 @@ function loop() {
     }
 
     // reset frogger if not on obstacle in river
-    if (froggerRow < rows.length / 2 - 1) {
-      frogger.x = grid * 6;
+    if (froggerRow < rows.length / 2 - 2) {
+      frogger.x = grid * 5;
       frogger.y = grid * 13;
     }
   }
