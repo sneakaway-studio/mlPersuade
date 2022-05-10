@@ -28,6 +28,7 @@ var alien3;
 var alien4;
 var h = 0;
 var anum = 2;
+var ran= 0;
 // ===========================
 //  Preload the Image Sprites
 // ===========================
@@ -98,7 +99,7 @@ function moveScreen() {
     aYChange = 3;
   } else {
     platYChange = 0;
-    aYchange = 0;
+    aYchange = 3;
   }
 }
 
@@ -206,14 +207,20 @@ function drawAlien() {
 
 
 function Alien(newAlienYPosition) {
-  this.xPos = random(0, 300);
+  ran = random(0, 2);
+  if (ran == 0){
+    this.xPos = random(0, 100);
+  }
+  else {
+    this.xPos = random(200, 300);
+  }
   this.yPos = newAlienYPosition;
   this.width = aWidth;
   this.height = aHeight;
 }
 
 function Platform(newPlatformYPosition) {
-  this.xPos = random(10, 207);
+  this.xPos = random(10, 260);
   this.yPos = newPlatformYPosition;
   this.width = platformWidth;
   this.height = platformHeight;

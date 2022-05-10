@@ -388,7 +388,6 @@ img.posit{
   position: absolute;
   left: 142px;
   top:80px;
-  box-shadow: inset 10px 10px gray, inset 10px 10px gray;
 }
 
 .hscreen {
@@ -478,7 +477,7 @@ img.posit{
 	 display: none;
    top: 0;
    left: 0;
-   font-family: spaceF;
+   font-family: 'Courier New', Courier, monospace ;
    color: #191970;
 }
 
@@ -709,8 +708,11 @@ img.posit{
 
 #video1 {
   position: absolute;
-  top: 100px;
+  top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 #yvid {
@@ -1094,6 +1096,30 @@ input[type=text] {
   100% { transform: scaleX(1); }
 }
 
+#cover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-top: auto;
+  height: auto;
+  width: 97%;
+  background-color: #ffd0ff;
+  z-index: 100;
+}
+#wth {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  margin: auto;
+  width: 90%;
+  height: auto;
+  border-radius: 15px;
+  background-color: #ffd0ff;
+  z-index: 100;
+}
+
 
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">importStyles("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 
@@ -1141,6 +1167,8 @@ window.google = function(){
 		$(".screen").animate({left:"178px", top:"74px"}, {duration: 1000, queue: false});
 		$(".iphone").animate({top:"-90px"}, {duration: 1000, queue: false});
   }, 1500)
+  const homeb = document.getElementById('homeb');
+    homeb.coords = "(310, 615, 30)";
   setTimeout(function(){
     document.getElementById("sP").style.display = "block";
     document.getElementById("sP").style.zIndex = "108";
@@ -1324,6 +1352,9 @@ window.chooseCharac1 = function(id){
 &lt;/map&gt;
 &lt;div class=&quot;screen pp&quot;&gt;
 &lt;img id=&quot;sc&quot; usemap=&quot;#screenmap&quot; src=&quot;images/homescreen.png&quot; class=&quot;hscreen&quot;&gt;
+&lt;div id=&quot;cover&quot; class=&quot;screen pp&quot;&gt;
+&lt;img id=&quot;wth&quot; src=&quot;images/weather.png&quot;&gt;
+&lt;/div&gt;
 
 &lt;img id=&quot;fbl&quot; src=&quot;images/fb_screen.png&quot; class=&quot;fb&quot;&gt;
 
@@ -1462,10 +1493,10 @@ window.chooseCharac1 = function(id){
 &lt;div id=&quot;title&quot; class=&quot;typewriter&quot;&gt;drawn()&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sText&quot;&gt;
-&lt;div id=&quot;ps1&quot; class=&quot;typewriter&quot;&gt;&lt;span id=&quot;s11&quot; style=&quot;color:red&quot;&gt;about&lt;/span&gt; = &lt;span id=&quot;s12&quot; style=&quot;color:blue&quot;&gt;impact of mL && predictive-modeling&lt;/span&gt;&lt;/div&gt;
+&lt;div id=&quot;ps1&quot; class=&quot;typewriter&quot;&gt;&lt;span id=&quot;s11&quot; style=&quot;color:red&quot;&gt;about&lt;/span&gt; = &lt;span id=&quot;s12&quot; style=&quot;color:blue&quot;&gt;harmful effects of mL online&lt;/span&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sText&quot;&gt;
-&lt;div id=&quot;ps2&quot; class=&quot;typewriter&quot;&gt;&lt;span id=&quot;s21&quot; style=&quot;color:#59fdff;&quot;&gt;var instr&lt;/span&gt; = &lt;span id=&quot;s22&quot; style=&quot;color:#9eff9e&quot;&gt;click any of the apps to play a game and click home button to return whenever&lt;/span&gt;&lt;/div&gt;
+&lt;div id=&quot;ps2&quot; class=&quot;typewriter&quot;&gt;&lt;span id=&quot;s21&quot; style=&quot;color:#59fdff;&quot;&gt;var instr&lt;/span&gt; = &lt;span id=&quot;s22&quot; style=&quot;color:#9eff9e&quot;&gt;click an app (except weather) to play and click home button to return&lt;/span&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;sText&quot;&gt;
 &lt;div id=&quot;ps3&quot; class=&quot;typewriter&quot;&gt;click() -> start()&lt;/div&gt;
@@ -1479,6 +1510,7 @@ window.chooseCharac1 = function(id){
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+
 </tw-passagedata><tw-passagedata pid="4" name="YT" tags="" position="751,591" size="100,100">&lt;div id=&quot;bottommask1&quot;&gt;
 &lt;img usemap=&quot;#homemap&quot; src=&quot;/Users/owencorkery/Documents/Spring 2022/DIG 404/game/home.png&quot; class=&quot;home&quot;&gt;
 &lt;div id=&quot;bottommask2&quot;&gt;
