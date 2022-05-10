@@ -31,7 +31,7 @@ novax.src = "../images/novax.png";
 var c = new Image();
 c.src = "../images/pixmom.png";
 var trump = new Image();
-trump.src = "../images/tpixel.png";
+trump.src = "../images/elderberry.png";
 var fnews = new Image();
 fnews.src = "../images/fnews.png";
 var bshapiro = new Image();
@@ -50,6 +50,8 @@ var sdist = new Image();
 sdist.src = "../images/sdist.png";
 var meds = new Image();
 meds.src = "../images/meds.png";
+var ajones = new Image();
+ajones.src = "../images/alexjones.png";
 var playOnce = 0;
 
 
@@ -101,6 +103,9 @@ Sprite.prototype.render = function() {
   else if (this.shape == 'meds'){
     context.drawImage(meds, this.x , this.y + gridGap / 2, this.size , grid - gridGap);
   }
+  else if (this.shape == 'ajones'){
+    context.drawImage(ajones, this.x , this.y + gridGap / 2, this.size , grid - gridGap);
+  }
   // draw a circle sprite. since size is the diameter we need to divide by 2
   // to get the radius. also the x/y position needs to be centered instead of
   // the top-left corner of the sprite
@@ -125,14 +130,13 @@ const scoredFroggers = [];
 // a pattern describes each obstacle in the row
 const patterns = [
   // end bank is safe
-  null,
 
   // log
   {
-    spacing: [2],      // how many grid spaces between each obstacle
+    spacing: [0, 3, 0],      // how many grid spaces between each obstacle
     color: '#c55843',  // color of the obstacle
-    size: grid * 4,    // width (rect) / diameter (circle) of the obstacle
-    shape: 'rect',     // shape of the obstacle (rect or circle)
+    size: grid * 2,    // width (rect) / diameter (circle) of the obstacle
+    shape: 'bshapiro',     // shape of the obstacle (rect or circle)
     speed: 0.75        // how fast the obstacle moves and which direction
   },
 
@@ -160,10 +164,17 @@ const patterns = [
     shape: 'bshapiro',
     speed: -1
   },
-
+  {
+    spacing: [3,0,3,0,3],
+    color: '#de0004',
+    size: grid*1.5,
+    shape: 'ajones',
+    speed: -1
+  },
   // log
 
   // turtle
+
   null,
   null,
   // beach is safe
