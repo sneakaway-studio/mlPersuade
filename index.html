@@ -204,6 +204,34 @@ text.intro {
   	margin: 0;
   	border: 0;
 }
+#rightmask1 {
+height: 100%;
+width: 7.5px;
+background-color: #bd7155;
+right: -7.5px;
+position: absolute;
+top: 0;
+z-index: 200;
+}
+#rightmask2 {
+height: 100%;
+width: 7.5px;
+background-color: #693e2f;;
+right: -7.5px;
+position: absolute;
+top: 0;
+z-index: 200;
+}
+#rightmask3 {
+height: 100%;
+width: 200px;
+background-color: #D4EFFF;
+right: -15px;
+position: absolute;
+top: 0;
+z-index: 200;
+left:9px;
+}
 
 .fb {
   position:absolute;
@@ -295,6 +323,16 @@ text.intro {
 	transform: translateY(0px);
   }
 }
+@keyframes side {
+  from {
+	transform: translateX(100%);
+  }
+  to {
+	transform: translateX(0%);
+  }
+}
+
+
 
 @keyframes click {
   0% {
@@ -318,6 +356,10 @@ text.intro {
   }
 }
 
+.rotated {
+  transform: rotate(90deg);
+}
+
 
 .iphone {
   animation:
@@ -328,7 +370,7 @@ text.intro {
 img.posit{
   -webkit-filter: drop-shadow(10px 10px 10px #666666);
   filter: drop-shadow(10px 10px 10px #666666);
-  z-index:100
+  z-index:100;
 }
 
 .iphone {
@@ -337,6 +379,7 @@ img.posit{
   position:absolute;
   left: 0px;
   top:0px;
+  transform: none;
 }
 
 .screen {
@@ -379,22 +422,39 @@ img.posit{
 
 #iframe2 {
   position: absolute;
-  top: 0;
   left: 0;
   animation: fadeIn 1s backwards;
   animation-play-state: paused;
   z-index:1;
+  height: 490px;
+  width: 277px;
+  top: 15px;
 }
 #iframe3 {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -17px;
+  left: 4px;
   animation: fadeIn 1s backwards;
-  animation-play-state: paused;
+  height: 315px;
+  width: 600px;
+}
+
+#fdiv {
+  height: 490px;
+  width: 277px;
+}
+
+.border iframe {
+  display: block;
+  border: none;
 }
 
 #point.ytc {
   left: 115px;
+}
+
+#point.gchand {
+  left: 180px;
 }
 
 
@@ -426,7 +486,7 @@ img.posit{
   background: linear-gradient(to right, #ff2f2f, #ff0f5b, #ffeaf1);
 }
 #dc11 {
-  background: linear-gradient(to right, #ff2f2f, #ff0f5b, #ffeaf1);
+  background: linear-gradient(to right, #88cfff, #259dff, #8cfbff);
 }
 
 .pricing-table .card {
@@ -539,8 +599,8 @@ img.posit{
 	 display: none;
    top: 0;
    left: 0;
-   font-family: spaceF;
-   color: #191970;
+   font-family: monospace;
+   color: #380049;
 }
 
 .pricing-table1 .card1 {
@@ -682,12 +742,356 @@ img.posit{
 }
 .goog {
   display: none;
-  z-index=110;
+  z-index:110;
   width: 600px;
-  height: 200px;
+  height: 300px;
+  top: 0;
+  left: 0;
+}
+.right {
+  width:100%;
+  height: 500px;
+  display: none;
+}
+
+.rightPhone {
+  display:none;
+}
+
+#pOutR {
+  animation: side 1s;
+  animation-play-state: paused;
+}
+
+#rightscreen {
+  position: absolute;
+  width: 600px;
+  height: 300px;
+  display: none;
+  left: 115px;
+  bottom: 60px;
+}
+.typewriter p {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s 1s steps(24, end) backwards,
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  0% { border-color: transparent }
+  50% { border-color: orange}
+  100% {border-color: transparent}
+}
+#overlay2 {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 20px;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 110;
+  cursor: pointer;
+  font-size: 10px;
+  text-align: center;
+}
+
+#overlay {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 20px;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 110;
+  cursor: pointer;
+  font-size: 10px;
+  text-align: center;
+}
+
+
+#p1 {
+    animation: 
+      typing 3s steps(30, end),
+		  blink-caret 0.75s step-end 4;
+    margin-top: 80%;
+}
+#p11 {
+    animation: 
+      typing 3s steps(30, end),
+		  blink-caret 0.75s step-end 4;
+}
+
+#p2 {
+    animation: 
+        typing 3s 3s steps(30, end) backwards,
+		    blink-caret 0.75s 3s both 4;
+}
+#p3 {
+    animation: 
+        typing 3s 6s steps(30, end) backwards,
+		    blink-caret 0.75s 6s both 4;
+}
+#p4 {
+    animation: 
+        typing 3s 9s steps(30, end) backwards,
+		    blink-caret 0.75s 9s both 4;
+}
+#p5 {
+    animation: 
+        typing 3s 12s steps(30, end) backwards,
+		    blink-caret 0.75s 12s both 4;
+}
+#p6 {
+    animation: 
+        typing 3s 15s steps(30, end) backwards,
+		    blink-caret 0.75s 15s both 4;
+}
+#p7 {
+    animation: 
+        typing 3s 18s steps(30, end) backwards,
+		    blink-caret 0.75s 18s both 4;
+}
+
+#startScreen {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
   position: absolute;
   top: 0;
   left: 0;
+  text-align: center;
+
+}
+
+.sText {
+  color: white;
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+  font-family: "Courier New";
+}
+
+#title {
+  animation: 
+        typing 2s 1s steps(7) backwards,
+		    blink-caret 0.5s 1s both 4;
+  font-size: 90px;
+  overflow: hidden;
+  margin: 0 auto;
+  white-space: nowrap;
+  border-right: .15em solid orange;
+  color: yellow;
+}
+
+#ps1 {
+  animation: 
+        typing 3s 5s steps(30, end) backwards,
+		    blink-caret 0.75s 5s both 4;
+  overflow: hidden;
+  margin: 0 auto;
+  white-space: nowrap;
+  border-right: .15em solid orange;
+  font-size: 30px;
+}
+#s11 {
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 20px;
+}
+
+#ps2 {
+  animation: 
+        typing 3s 10s steps(30, end) backwards,
+		    blink-caret 0.75s 10s both 4;
+  overflow: hidden;
+  margin: 0 auto;
+  white-space: nowrap;
+  border-right: .15em solid orange;
+  font-size: 14px;
+}
+#s21 {
+  white-space: nowrap;
+  font-size: 11px;
+  overflow: hidden;
+}
+#ps3 {
+  animation: 
+        typing 2s 12s steps(15, end) backwards,
+		    blink-caret 0.5s 12s both 4;
+  overflow: hidden;
+  margin: 0 auto;
+  white-space: nowrap;
+  border-right: .15em solid orange;
+  font-size: 50px;
+}
+#sP {
+  position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0px;
+    width: 221px;
+    height: 408px;
+    display: none;
+    background: white;
+}
+
+#logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin:20% auto auto auto;
+    width:50%;
+    height:auto;
+}
+
+#search {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width:80%;
+    height:20px;
+    margin:55% auto auto auto;
+    text-align: center;
+    border-radius: 20px;
+    z-index: 109;
+    animation: mailpost 2s forwards;
+    animation-play-state: paused;
+    color: black;
+}
+
+input[type=text] {
+  min-width: 0;
+}
+
+.app {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width: auto;
+    height: 25px;
+    margin: auto;
+}
+
+#ut, #fac, #shopp {
+    position: relative;
+    flex: 1;
+    width: 30px;
+    height: 40px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 15px;
+    border-radius: 15px;
+    background-color: rgb(215, 255, 235);
+}
+
+#bookmarks {
+    display: flex;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0 10px;
+}
+
+#mbox {
+  position: absolute;
+  top: 0;
+  left: 70%;
+    right: 0;
+    bottom: 44%;
+    margin: auto;
+    width: 20%;
+    height: auto;
+  animation: mailbx 1s backwards;
+  z-index: 110;
+  transform-origin: bottom;
+  animation-play-state: paused;
+}
+
+#mdoor {
+  position: absolute;
+    top: 0;
+    left: 80%;
+    right: 0;
+    bottom: 33%;
+    margin: auto;
+    width: 11%;
+    height: 0;
+    animation: maildr 1s forwards;
+    z-index: 110;
+    transform-origin: top;
+    animation-play-state: paused;
+}
+
+@keyframes mailbx {
+  0% { transform: scaleY(0); }
+  100% { transform: scaleY(1); }
+}
+
+@keyframes maildr {
+  0% { transform: scaleY(1); }
+  100% { transform: scaleY(-1); }
+}
+@keyframes mailpost {
+  from {background-color: transparent;}
+  to {background-color: brown;}
+}
+
+#mrun {
+  position: absolute;
+    top: 0;
+    left: 0;
+    right: -200%;
+    bottom: 0;
+    margin: 38% auto auto auto;
+    width: 20%;
+    height: auto;
+    animation: mailrun 1s forwards;
+    animation-play-state: paused;
+    z-index: 110;
+    transform: scaleX(-1);
+    opacity: 0%;
+}
+
+@keyframes mailrun {
+  0% { transform: scaleX(-1); }
+  100% { transform: scaleX(1); }
 }
 
 
@@ -707,10 +1111,10 @@ window.stopPhone = function(){
 			logo.style.animationPlayState = "running";
 	}, 1000);
   setTimeout(function(){
-		$(".posit").animate({height: "740px", width: "626px"}, {duration: 1000, queue: false});
-		$(".iphone").animate({height: "715px", width: "625px"}, {duration: 1000, queue: false});
-		$(".fb, .hscreen, .screen").animate({height: "500px", width: "277px"}, {duration: 1000, queue: false});
-		$(".screen").animate({left:"178px", top:"74px"}, {duration: 1000, queue: false});
+		$(".posit").animate({height: "725px", width: "626px"}, {duration: 1000, queue: false});
+		$(".iphone").animate({height: "725px", width: "625px"}, {duration: 1000, queue: false});
+		$(".fb, .hscreen, .screen").animate({height: "490", width: "277px"}, {duration: 1000, queue: false});
+		$(".screen").animate({left:"178px", top:"90px"}, {duration: 1000, queue: false});
 		$(".iphone").animate({top:"-90px"}, {duration: 1000, queue: false});
 		$(".card1").animate({width: "100%"}, {duration: 1000, queue: false});
     const homeb1 = document.getElementById('homeb');
@@ -722,6 +1126,84 @@ window.stopPhone = function(){
 
 }
 
+window.google = function(){
+	const ph = document.getElementsByClassName('iphone');
+	for (let i = 0; i < ph.length; i++){
+		ph[i].style.animationPlayState = "paused";
+	}
+  const hand = document.getElementById('point');
+	hand.classList.add("gchand");
+	hand.style.animationPlayState = "running";
+  setTimeout(function(){
+  $(".posit").animate({height: "740px", width: "626px"}, {duration: 1000, queue: false});
+		$(".iphone").animate({height: "715px", width: "625px"}, {duration: 1000, queue: false});
+		$("#sP, .hscreen, .screen").animate({height: "500px", width: "277px"}, {duration: 1000, queue: false});
+		$(".screen").animate({left:"178px", top:"74px"}, {duration: 1000, queue: false});
+		$(".iphone").animate({top:"-90px"}, {duration: 1000, queue: false});
+  }, 1500)
+  setTimeout(function(){
+    document.getElementById("sP").style.display = "block";
+    document.getElementById("sP").style.zIndex = "108";
+  }, 3000)
+  const input = document.getElementById("search");
+  input.addEventListener("keypress", function(event) {
+    if (event.key == "Enter") {
+        event.preventDefault();
+        var val = input.value;
+        searchClick(val);
+    }
+  });
+}
+
+window.searchClick = function(val) {
+  var m = val;
+  $("#search").animate({width: "0.5%", left: "70%"}, {duration: 1000, queue: false});
+  $("#mdoor").animate({height: "6%"}, {duration: 1000, queue: false});
+  document.getElementById("search").style.animationPlayState = "running";
+  document.getElementById("mbox").style.animationPlayState = "running";
+  document.getElementById("posit").style.zIndex = "111";
+  setTimeout(function() {
+      $("#mrun").animate({right: "-98%"}, {duration: 3000, queue: false});
+      setTimeout(function() {
+        $("#mrun").animate({opacity: "100%"}, {duration: 500, queue: false});
+      }, 2400)
+      setTimeout(function() {
+        document.getElementById("mdoor").style.animationPlayState = "running";
+        document.getElementById("mrun").style.animationPlayState = "running";
+        setTimeout(function() {
+          document.getElementById("mrun").style.animationPlayState = "running";
+          $("#mrun").animate({right: "-200%"}, {duration: 3000, queue: false});
+          $("#mrun").animate({opacity: "0%"}, {duration: 500, queue: false});
+          setTimeout(function() {
+            googleSearch(m);
+          }, 1000)
+        }, 1000)
+      }, 3000)
+  }, 2000)
+
+  }
+
+window.googleSearch = function(val) {
+  var mes = val;
+  setTimeout(function(){
+    $(".sP, .posit, .screen, .iphone").animate({top: "500px", opacity: "0%"}, {duration: 1000, queue: false});
+    const sideP = document.getElementById('pOutR');
+    sideP.style.display = "block";
+    sideP.style.animationPlayState = "running";
+    document.getElementById("rightscreen").style.animationPlayState = "running";
+    document.getElementById("rightscreen").style.display = "block";
+  }, 1500)
+  const homeb = document.getElementById('homeb');
+  homeb.coords = "(767, 346, 30)";
+  setTimeout(function(){
+    const iframe3 = document.getElementById('iframe3');
+    document.getElementById('googdiv').style.display = "block";
+    iframe3.style.display = "block";
+    iframe3.style.animationPlayState = "running";
+    iframe3.src = "jumper/index.html";
+    iframe3.contentWindow.postMessage(mes, '*');
+  }, 2000)
+}
 
 window.youTube = function(){
 	const ph = document.getElementsByClassName('iphone');
@@ -770,18 +1252,41 @@ window.startDJ = function(){
 }
 
 window.startFr = function(){
-  const myVideo = document.getElementById("video1"); 
-  document.getElementById('yvid').style.display = "block";
-  myVideo.play();
-  myVideo.addEventListener('ended',myHandler,false);
-  function myHandler(e){
-    myVideo.pause();
-    document.getElementById('yvid').style.display = "none"
-    document.getElementById('iframe2').style.zIndex="105";
-    document.getElementById('iframe2').style.animationPlayState = "running";
-    setTimeout(function(){
-      document.getElementById('yvid').style.zIndex="105";
-    }, 1000);
+  const phone = document.getElementById('posit');
+  const hscreen = document.getElementById('sc');
+  hscreen.style.height = "490px";
+  phone.style.height = "700px";
+  var frame = document.getElementById("iframe2");
+frame.onload = function()
+{
+  frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
+
+  frame.style.width = frame.style.width  = 
+  frame.contentWindow.document.body.scrollWidth+'px';
+}
+  const screens = document.getElementsByClassName('screen');
+  for (let i = 0; i < screens.length; i++){
+		screens[i].style.height = "490px";
+	}
+  var fra = document.getElementById('iframe2');
+  document.getElementById('fdiv').style.zIndex="105";
+  document.getElementById('overlay').style.display="block";
+  document.getElementById('iframe2').style.zIndex="105";
+  document.getElementById('iframe2').style.animationPlayState = "running";
+  
+}
+
+window.removeOver = function(){
+  document.getElementById('overlay').style.display = "none";
+}
+window.removeOver1 = function(){
+  document.getElementById('overlay2').style.display = "none";
+}
+
+window.onmessage = function(e) {
+  if (e.data == 'safe') {
+    document.getElementById('overlay2').style.zIndex="106";
+    document.getElementById('overlay2').style.display="block";
   }
 }
 
@@ -809,17 +1314,41 @@ window.chooseCharac1 = function(id){
 	startFr();
 }
 
+
+
+
 </script><tw-passagedata pid="1" name="Begin" tags="script" position="937,377.6666666666667" size="100,100">&lt;div id=&quot;phd&quot; class=&quot;iphone pp&quot;&gt;
-&lt;img usemap=&quot;#phonemap&quot; src=&quot;images/phone_out.png&quot; class=&quot;posit pp&quot;&gt;
+&lt;img usemap=&quot;#phonemap&quot; src=&quot;images/phone_out.png&quot; class=&quot;posit pp&quot; id=&quot;posit&quot;&gt;
 &lt;map name=&quot;phonemap&quot;&gt;
 &lt;area id=&quot;homeb&quot; shape=&quot;circle&quot; coords=&quot;255,525,30&quot; alt=&quot;homeclick&quot; data-passage=&quot;Begin&quot;&gt;
 &lt;/map&gt;
 &lt;div class=&quot;screen pp&quot;&gt;
-&lt;img id=&quot;sc&quot; usemap=&quot;#screenmap&quot; src=&quot;images/homescreen.png&quot; class=&quot;hscreen pp&quot;&gt;
+&lt;img id=&quot;sc&quot; usemap=&quot;#screenmap&quot; src=&quot;images/homescreen.png&quot; class=&quot;hscreen&quot;&gt;
 
 &lt;img id=&quot;fbl&quot; src=&quot;images/fb_screen.png&quot; class=&quot;fb&quot;&gt;
 
 &lt;img id=&quot;flog&quot; src=&quot;images/f.png&quot; class=&quot;flogo&quot;&gt;
+
+&lt;div class=&quot;sP&quot; id=&quot;sP&quot;&gt;
+
+&lt;img src=&quot;images/google.png&quot; id=&quot;logo&quot;&gt;
+&lt;img src=&quot;images/mail1.png&quot; id=&quot;mbox&quot;&gt;
+&lt;img src=&quot;images/mail2.png&quot; id=&quot;mdoor&quot;&gt;
+&lt;img src=&quot;images/mailrun.gif&quot; id=&quot;mrun&quot;&gt;
+&lt;input name=&quot;search&quot; id=&quot;search&quot; type=&quot;text&quot; placeholder=&quot;Search or type URL&quot;&gt;
+&lt;div id=&quot;bookmarks&quot;&gt;
+&lt;div id=&quot;ut&quot;&gt;
+&lt;img src=&quot;images/ytlogo.png&quot; class=&quot;app&quot;&gt;
+&lt;/div&gt;
+&lt;div id=&quot;fac&quot;&gt;
+&lt;img src=&quot;images/facelogo.png&quot; class=&quot;app&quot;&gt;
+&lt;/div&gt;
+&lt;div id=&quot;shopp&quot;&gt;
+&lt;img src=&quot;images/shop.png&quot; class=&quot;app&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
 
 &lt;section id=&quot;choice&quot; class=&quot;pricing-table&quot;&gt;
   &lt;div id=&quot;dc1&quot; class=&quot;card&quot;&gt;
@@ -839,11 +1368,11 @@ window.chooseCharac1 = function(id){
 &lt;section id=&quot;choice1&quot; class=&quot;pricing-table1&quot;&gt;
   &lt;div id=&quot;dc11&quot; class=&quot;card1&quot;&gt;
     &lt;h6 class=&quot;type1&quot;&gt;Your Character&lt;/h6&gt;
-    &lt;img class=&quot;chs1&quot; src=&quot;images/pixmom.png&quot;&gt;
-    &lt;h5 class=&quot;plan1&quot;&gt;Justin&lt;/h5&gt;
+    &lt;img class=&quot;chs1&quot; src=&quot;images/pixmom.png&quot; height=&quot;100px&quot;&gt;
+    &lt;h5 class=&quot;plan1&quot;&gt;Facebook Mom&lt;/h5&gt;
     &lt;ul class=&quot;details1&quot;&gt;
-      &lt;li&gt;Says "Full Send" a lot&lt;/li&gt;
-      &lt;li&gt;Has bought two "Saturday are for the Boys" flags&lt;/li&gt;
+      &lt;li&gt;Always finds an at-home remedy for any case&lt;/li&gt;
+      &lt;li&gt;Isn't too sure about new medicine&lt;/li&gt;
     &lt;/ul&gt;
     &lt;div id=&quot;btn11&quot; onclick=&quot;chooseCharac1('dc11')&quot; class=&quot;buy-button1&quot;&gt;
       &lt;h3 class=&quot;btn1&quot;&gt;Start&lt;/h3&gt;
@@ -858,11 +1387,28 @@ window.chooseCharac1 = function(id){
 &lt;/div&gt;
 
 &lt;div id=&quot;fdiv&quot; class=&quot;frog&quot;&gt;
-&lt;iframe height=&quot;500&quot; width=&quot;277&quot; id=&quot;iframe2&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;100%&quot; scrolling=&quot;no&quot; id=&quot;iframe2&quot;&gt;&lt;/iframe&gt;
+&lt;div id=&quot;overlay&quot; class=&quot;typewriter&quot; onclick=&quot;removeOver()&quot;&gt;
+&lt;h1 id=&quot;h1&quot;&gt;CLICK TO START&lt;/h1&gt;
+&lt;p id=&quot;p1&quot;&gt; Facebook Mom cares about her kids' health.&lt;/p&gt;
+&lt;p id=&quot;p2&quot;&gt; That's why she reads as much information&lt;/p&gt; 
+&lt;p id=&quot;p3&quot;&gt;as she can on health-related news.&lt;/p&gt;
+&lt;p id=&quot;p4&quot;&gt;Today she is going on Facebook&lt;/p&gt; 
+&lt;p id=&quot;p5&quot;&gt;to learn about the new vaccine.&lt;/p&gt;
+&lt;p id=&quot;p6&quot;&gt;Help her travel through her feed without being&lt;/p&gt; 
+&lt;p id=&quot;p7&quot;&gt;hit by any "medical professional" opinions.&lt;/p&gt;
 &lt;/div&gt;
-&lt;div id=&quot;googdiv&quot; class=&quot;goog&quot;&gt;
-&lt;iframe height=&quot;200&quot; width=&quot;600&quot; id=&quot;iframe3&quot;&gt;&lt;/iframe&gt;
+&lt;div id=&quot;overlay2&quot; class=&quot;typewriter&quot; onclick=&quot;removeOver1()&quot;&gt;
+&lt;p id=&quot;p11&quot;&gt; Phew! She got through the feed.&lt;/p&gt;
+&lt;p id=&quot;p2&quot;&gt; All without being exposed to credited health information!&lt;/p&gt; 
+&lt;p id=&quot;p3&quot;&gt;Now she just has to explore her go-to pages of Facebook.&lt;/p&gt;
+&lt;p id=&quot;p4&quot;&gt;Help her make it out of the site&lt;/p&gt; 
+&lt;p id=&quot;p5&quot;&gt;without falling into any fake news traps.&lt;/p&gt;
+&lt;p id=&quot;p6&quot;&gt;Use some of her favorite pages and info sources&lt;/p&gt; 
+&lt;p id=&quot;p7&quot;&gt;to keep her within her filter bubble.&lt;/p&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+
 
 &lt;img id=&quot;yt&quot; src=&quot;images/ytload.png&quot; class=&quot;yt pp&quot;&gt;
 
@@ -881,11 +1427,28 @@ window.chooseCharac1 = function(id){
 &lt;map name=&quot;screenmap&quot;&gt;
 &lt;area shape=&quot;rect&quot; coords=&quot;15,35,60,80&quot; alt=&quot;fbook&quot; href=&quot;javascript:stopPhone()&quot;&gt;
 &lt;area shape=&quot;rect&quot; coords=&quot;82,35,130,80&quot; alt=&quot;yt&quot; href=&quot;javascript:youTube()&quot;&gt;
+&lt;area shape=&quot;rect&quot; coords=&quot;149,35,200,80&quot; alt=&quot;gc&quot; href=&quot;javascript:google()&quot;&gt;
 
 &lt;/map&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
+&lt;div id=&quot;right&quot;&gt;
+&lt;img usemap=&quot;#rightmap&quot; src=&quot;images/Phone_right.png&quot; id=&quot;pOutR&quot; class=&quot;rightPhone&quot;&gt;
+&lt;map name=&quot;rightmap&quot;&gt;
+&lt;area shape=&quot;circle&quot; coords=&quot;766,342, 30&quot; data-passage=&quot;Begin&quot;&gt;
+&lt;/map&gt;
+&lt;div id=&quot;rightscreen&quot;&gt;
+&lt;div id=&quot;googdiv&quot; class=&quot;goog&quot;&gt;
+&lt;iframe id=&quot;iframe3&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;rightmask1&quot;&gt;
+&lt;div id=&quot;rightmask2&quot;&gt;
+&lt;div id=&quot;rightmask3&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;div id=&quot;bottommask1&quot;&gt;
 &lt;div id=&quot;bottommask2&quot;&gt;
 &lt;div id=&quot;bottommask3&quot;&gt;
@@ -893,7 +1456,23 @@ window.chooseCharac1 = function(id){
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;img id=&quot;point&quot; src=&quot;images/point.png&quot;&gt;</tw-passagedata><tw-passagedata pid="2" name="start" tags="start" position="1337,585" size="100,100">[[Begin]]</tw-passagedata><tw-passagedata pid="3" name="Next" tags="" position="1101,590" size="100,100">&lt;div id=&quot;bottommask1&quot;&gt;
+&lt;img id=&quot;point&quot; src=&quot;images/point.png&quot;&gt;</tw-passagedata><tw-passagedata pid="2" name="start" tags="start" position="1337,585" size="100,100">
+&lt;div id=&quot;startScreen&quot; data-passage=&quot;Begin&quot;&gt;
+&lt;div class=&quot;sText&quot;&gt;
+&lt;div id=&quot;title&quot; class=&quot;typewriter&quot;&gt;drawn()&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sText&quot;&gt;
+&lt;div id=&quot;ps1&quot; class=&quot;typewriter&quot;&gt;&lt;span id=&quot;s11&quot; style=&quot;color:red&quot;&gt;about&lt;/span&gt; = &lt;span id=&quot;s12&quot; style=&quot;color:blue&quot;&gt;impact of mL && predictive-modeling&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sText&quot;&gt;
+&lt;div id=&quot;ps2&quot; class=&quot;typewriter&quot;&gt;&lt;span id=&quot;s21&quot; style=&quot;color:#59fdff;&quot;&gt;var instr&lt;/span&gt; = &lt;span id=&quot;s22&quot; style=&quot;color:#9eff9e&quot;&gt;click any of the apps to play a game and click home button to return whenever&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sText&quot;&gt;
+&lt;div id=&quot;ps3&quot; class=&quot;typewriter&quot;&gt;click() -> start()&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+</tw-passagedata><tw-passagedata pid="3" name="Next" tags="" position="1101,590" size="100,100">&lt;div id=&quot;bottommask1&quot;&gt;
 &lt;img usemap=&quot;#homemap&quot; src=&quot;/Users/owencorkery/Documents/Spring 2022/DIG 404/game/home.png&quot; class=&quot;home&quot;&gt;
 &lt;div id=&quot;bottommask2&quot;&gt;
 &lt;div id=&quot;bottommask3&quot;&gt;

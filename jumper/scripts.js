@@ -41,6 +41,8 @@ let isAlive = setInterval(function () {
   }
 }, 10);
 
+
+
 function startGame(){
     document.getElementById("cactus").style.display = "box";
     document.getElementById("trash").style.display = "box";
@@ -57,6 +59,10 @@ function gameOver() {
     document.getElementById("trash").style.animationPlayState = "paused";
     document.getElementById("icon").style.animationPlayState = "paused";
     document.getElementById("gover").style.display = "block";
+    window.onmessage = function(e) {
+        var searchReq = e.data;
+        document.getElementById("mP").innerHTML = searchReq;
+    };
 }
 
 function winGame() {
@@ -85,3 +91,7 @@ function restartGame() {
 document.addEventListener("keydown", function (event) {
   jump();
 });
+window.addEventListener('message', function(dataPassed) {
+    var searchReq = dataPassed.data;
+    document.getElementById("mP").innerHTML = searchReq;
+ })

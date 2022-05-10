@@ -4,10 +4,15 @@ var doodlerY;
 var doodlerVelocity;
 var doodlerXSpeed = 4;
 var platformWidth = 58;
+var aWidth = 70;
 var platformHeight = 7;
-var numOfPlatforms = 5;
+var aHeight = 50;
+var numOfPlatforms = 7;
+var numA = 1;
 var platformList = [];
+var aList = [];
 var platYChange = 0;
+var aYChange = 0;
 var gameStarted;
 var score = 0;
 var highScore = 0;
@@ -17,7 +22,12 @@ var platformImg;
 var backgroundImg;
 var img;
 var spaceF;
-
+var alien1;
+var alien2;
+var alien3;
+var alien4;
+var h = 0;
+var anum = 2;
 // ===========================
 //  Preload the Image Sprites
 // ===========================
@@ -29,6 +39,10 @@ function preload() {
   doodlerLeftImg = loadImage("../images/djc1left.png");
   doodlerRightImg = loadImage("../images/djc1right.png");
   spaceF = loadFont('../images/SpaceSurf.ttf');
+  alien1 = loadImage('../images/alien1.png');
+  alien2 = loadImage('../images/alien2.png');
+  alien3 = loadImage('../images/alien3.png');
+  alien4 = loadImage('../images/alien4.png');
 }
 
 // ===========================
@@ -40,8 +54,8 @@ function setup() {
   frameRate(60);
   gameStarted = false;
 }
-
 function draw() {
+  h += 1;
   background(247, 239, 231);
   image(backgroundImg, 0, 0, 277, 500);
   if(gameStarted == true) {
@@ -51,6 +65,7 @@ function draw() {
     checkCollision();
     moveDoodler();
     moveScreen();
+    drawAlien();
   } else {
     // Start menu
     fill('#AAF0D1');
@@ -80,8 +95,10 @@ function moveScreen() {
   if(doodlerY < 250) {
     platYChange = 3;
     doodlerVelocity += 0.25;
+    aYChange = 3;
   } else {
     platYChange = 0;
+    aYchange = 0;
   }
 }
 
@@ -90,6 +107,7 @@ function mousePressed() {
   if(gameStarted == false) {
     score = 0;
     setupPlatforms();
+    setUpAlien();
     img = doodlerLeftImg;
     doodlerY = 260;
     doodlerX = platformList[platformList.length - 1].xPos + 10;
@@ -97,7 +115,7 @@ function mousePressed() {
     gameStarted = true;
   }
 }
-50
+
 // ===========================
 //  Doodler
 // ===========================
@@ -139,7 +157,6 @@ function drawPlatforms() {
     // move all platforms down
     plat.yPos += platYChange;
     image(platformImg, plat.xPos, plat.yPos, plat.width, plat.height);
-
     if(plat.yPos > 500) {
       score++;
       platformList.pop();
@@ -147,6 +164,52 @@ function drawPlatforms() {
       platformList.unshift(newPlat); // add to front
     }
   });
+}
+
+
+function setUpAlien() {
+  for(var i=0; i < numA; i++) {
+    var aGap = aHeight / numA;
+    var newAlienYPosition = i * aGap / 2;
+    var al = new Alien(newAlienYPosition);
+    aList.push(al);
+  }
+}
+
+function drawAlien() {
+  aList.forEach(function(al) {
+    // move all platforms down
+    al.yPos += aYChange;
+    if (h % 180 == 0) {
+       anum = Math.floor(Math.random() * 4);
+    }
+    if (anum == 0) {
+      image(alien1, al.xPos, al.yPos, al.width, al.height);
+    }
+    else if (anum == 1) {
+      image(alien2, al.xPos, al.yPos, al.width, al.height);
+    }
+    else if (anum == 2) {
+      image(alien3, al.xPos, al.yPos, al.width, al.height);
+    }
+    else{
+      image(alien4, al.xPos, al.yPos, al.width, al.height);
+    }
+
+    if(al.yPos > 500) {
+      aList.pop();
+      var newAl = new Alien(0);
+      aList.unshift(newAl); // add to front
+    }
+  });
+}
+
+
+function Alien(newAlienYPosition) {
+  this.xPos = random(0, 300);
+  this.yPos = newAlienYPosition;
+  this.width = aWidth;
+  this.height = aHeight;
 }
 
 function Platform(newPlatformYPosition) {
@@ -165,19 +228,30 @@ function checkCollision() {
       doodlerX < plat.xPos + plat.width &&
       doodlerX + doodlerSize > plat.xPos &&
       doodlerY + doodlerSize < plat.yPos + plat.height &&
-      doodlerY + doodlerSize > plat.yPos &&
-      doodlerVelocity > 0
+      doodlerY + doodlerSize > plat.yPos
     ) {
       doodlerVelocity = -8;
     }
   });
-  
+  aList.forEach(function(al) {
+    if(
+      doodlerX < al.xPos + al.width &&
+      doodlerX + doodlerSize > al.xPos &&
+      doodlerY + doodlerSize < al.yPos + al.height &&
+      doodlerY + doodlerSize > al.yPos
+    ) {
+      gameStarted = false;
+      platformList = [];
+      aList = [];
+    }
+  });
   if(doodlerY > height) {
     if(score > highScore) {
       highScore = score;
     }
     gameStarted = false;
     platformList = [];
+    aList = [];
   }
   
   // screen wraps from left to right

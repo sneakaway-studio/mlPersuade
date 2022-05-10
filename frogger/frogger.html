@@ -11,10 +11,11 @@
   }
 
   body {
-    background: rgb(255, 255, 255);
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
   }
   </style>
 </head>
@@ -49,6 +50,7 @@ var sdist = new Image();
 sdist.src = "../images/sdist.png";
 var meds = new Image();
 meds.src = "../images/meds.png";
+var playOnce = 0;
 
 
 
@@ -142,17 +144,6 @@ const patterns = [
     shape: 'trump',
     speed: -1
   },
-
-  // long log
-  {
-    spacing: [2],
-    color: '#c55843',
-    size: grid * 7,
-    shape: 'rect1',
-    speed: 1.5
-  },
-
-  // log
   {
     spacing: [3],
     color: '#c55843',
@@ -161,7 +152,7 @@ const patterns = [
     speed: 0.5
   },
 
-  // turtle
+  // long log
   {
     spacing: [0,0,1],
     color: '#de0004',
@@ -169,6 +160,11 @@ const patterns = [
     shape: 'bshapiro',
     speed: -1
   },
+
+  // log
+
+  // turtle
+  null,
   null,
   // beach is safe
 
@@ -271,17 +267,17 @@ function loop() {
   // draw the game background
   // water
   context.globalAlpha = 0.5;
-  context.drawImage(void1, 0, grid, canvas.width, grid * 7);
+  context.drawImage(void1, 0, 0, canvas.width, grid * 7);
   context.globalAlpha = 1.0;
 
   // end bank
   context.fillStyle = '#1ac300';
-  context.fillRect(0, grid, canvas.width/5, grid);
-  context.fillRect((canvas.width/5) * 2, grid, canvas.width/5, grid);
-  context.fillRect((canvas.width/5) * 4, grid, canvas.width/5, grid);
+  context.fillRect(0, 0, canvas.width/5, grid);
+  context.fillRect((canvas.width/5) * 2, 0, canvas.width/5, grid);
+  context.fillRect((canvas.width/5) * 4, 0, canvas.width/5, grid);
   // beach
   context.fillStyle = '#8500da';
-  context.fillRect(0, 7 * grid, canvas.width, grid);
+  context.fillRect(0, 6 * grid, canvas.width, grid*2);
   context.globalAlpha = 0.5;
   context.drawImage(feed, 0, 8 * grid, canvas.width, grid*5);
 
@@ -387,7 +383,10 @@ function loop() {
   if (!collision) {
     // if fogger isn't colliding reset speed
     frogger.speed = 0;
-
+    if(froggerRow == 6 && playOnce < 1){
+        window.top.postMessage('safe', '*');
+        playOnce += 1;
+    }
     // frogger got to end bank (goal every 3 cols)
     const col = (frogger.x + grid / 2) / grid | 0;
     if (froggerRow === 0 && col % 3 === 0 &&
@@ -398,6 +397,7 @@ function loop() {
         x: col * grid,
         y: frogger.y + 5
       }));
+      playOnce = 0;
     }
 
     // reset frogger if not on obstacle in river
