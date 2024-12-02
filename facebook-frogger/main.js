@@ -1,27 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Basic Frogger HTML Game</title>
-  <meta charset="UTF-8">
-  <style>
+// TODO: 
+// review for reference errors, etc. 
+// code from script tags in html 
+// is currently unchanged
 
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
 
-  body {
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-  }
-  </style>
-</head>
-<body>
-<canvas width="277" height="490" id="game"></canvas>
-<script>  
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
 var vac = new Image();
@@ -53,9 +35,6 @@ meds.src = "../images/meds.png";
 var ajones = new Image();
 ajones.src = "../images/alexjones.png";
 var playOnce = 0;
-
-
-
 
 
 const grid = 35;
@@ -444,8 +423,5 @@ document.addEventListener('keydown', function(e) {
   frogger.y = Math.min( Math.max(grid, frogger.y), canvas.height - grid * 2);
 });
 
-// start the game
+//start the game
 requestAnimationFrame(loop);
-</script>
-</body>
-</html>
