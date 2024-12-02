@@ -39,7 +39,7 @@ function preload() {
   platformImg = loadImage("https://raw.githubusercontent.com/JasonMize/coding-league-assets/master/doodle-jump-platform.png");
   doodlerLeftImg = loadImage("../images/djc1left.png");
   doodlerRightImg = loadImage("../images/djc1right.png");
-  spaceF = loadFont('../images/SpaceSurf.ttf');
+//   spaceF = loadFont('../images/SpaceSurf.ttf');
   alien1 = loadImage('../images/alien1.png');
   alien2 = loadImage('../images/alien2.png');
   alien3 = loadImage('../images/alien3.png');
@@ -70,7 +70,7 @@ function draw() {
   } else {
     // Start menu
     fill('#AAF0D1');
-    textFont(spaceF);
+    // textFont(spaceF);
     textSize(25);
     text("CLICK TO START", 20, 200);
     textFont("Space Mono");
