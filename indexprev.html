@@ -1201,7 +1201,7 @@ window.googleSearch = function(val) {
     document.getElementById('googdiv').style.display = "block";
     iframe3.style.display = "block";
     iframe3.style.animationPlayState = "running";
-    iframe3.src = "jumper/index.html";
+    iframe3.src = "google-jumper/";
     iframe3.contentWindow.postMessage(mes, '*');
   }, 2000)
 }
@@ -1293,7 +1293,7 @@ window.onmessage = function(e) {
 
 
 window.chooseCharac = function(id){
-	document.getElementById('iframe1').src="doodlejump/doodle1.html";
+	document.getElementById('iframe1').src="youtube-doodlejump/";
 	const yt = document.getElementById("yt");
 	const hs = document.getElementById("sc");
 	yt.style.zIndex = "0";
@@ -1305,7 +1305,7 @@ window.chooseCharac = function(id){
 }
 
 window.chooseCharac1 = function(id){
-	document.getElementById('iframe2').src="frogger/frogger.html";
+	document.getElementById('iframe2').src="facebook-frogger/";
 	const fb = document.getElementById("fbl");
 	const hs = document.getElementById("sc");
 	yt.style.zIndex = "0";
