@@ -9,8 +9,8 @@ var vac = new Image();
 vac.src = "images/vaccine.png";
 var character = new Image();
 character.src = "images/pixmom.png";
-var trump = new Image();
-trump.src = "images/rfk.png";
+var rfk = new Image();
+rfk.src = "images/rfk.png";
 var fnews = new Image();
 fnews.src = "images/fnews.png";
 var bshapiro = new Image();
@@ -52,8 +52,8 @@ Sprite.prototype.render = function () {
 		context.drawImage(vac, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
 	} else if (this.shape == "character") {
 		context.drawImage(character, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
-	} else if (this.shape == "trump") {
-		context.drawImage(trump, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
+	} else if (this.shape == "rfk") {
+		context.drawImage(rfk, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
 	} else if (this.shape == "fnews") {
 		context.drawImage(fnews, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
 	} else if (this.shape == "bshapiro") {
@@ -123,7 +123,7 @@ const patterns = [
 		spacing: [0, 2, 0, 2, 0, 2, 0, 4],
 		color: "#de0004",
 		size: grid,
-		shape: "trump",
+		shape: "rfk",
 		speed: -1,
 	},
 	{
