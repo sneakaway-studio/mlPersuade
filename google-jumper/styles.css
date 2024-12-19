@@ -1,268 +1,234 @@
 .game {
-	position: absolute;
-	top: 0;
-	width: 600px;
-	height: 305px;
-	border: 1px solid black;
-	margin: auto;
-	background-image: url("img/theweb.jpg");
-	background-color: rgba(255, 255, 255, 0.8);
-	background-blend-mode: lighten;
-	z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 600px;
+  height: 305px;
+  border: 1px solid black;
+  margin: auto;
+  background-image: url("img/theweb.jpg");
+  background-color: rgba(255, 255, 255, 0.8);
+  background-blend-mode: lighten;
+  z-index: 1;
 }
 
 #dino {
-	width: 50px;
-	height: 50px;
-	position: relative;
-    background-image: url("img/images/mailrun.gif");
-    background-size: 50px 50px;
-	top: 250px;
-    opacity: 0%;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  background-image: url("img/images/mailrun.gif");
+  background-size: 50px 50px;
+  top: 250px;
+  opacity: 0%;
 }
 
 #gover {
-	display: none;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-	top: 0;
-	position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  position: absolute;
 }
 
 #gover p {
-	text-align: center;
-    margin-top: 80px;
-	font-size: 30px;
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana,
-		sans-serif;
-	color: rgb(255, 49, 49);
+  text-align: center;
+  margin-top: 80px;
+  font-size: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(255, 49, 49);
 }
 
 .button {
-	border: none;
-	color: rgb(0, 0, 0);
-	background-color: rgb(160, 207, 255);
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	cursor: pointer;
-	position: absolute;
-	left: 40%;
+  border: none;
+  color: rgb(0, 0, 0);
+  background-color: rgb(160, 207, 255);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  position: absolute;
+  left: 40%;
 }
 
 .jump {
-	animation: jump 0.5s linear;
+  animation: jump 0.5s;
+  animation-timing-function: cubic-bezier(0.42, 0, 0.58, 0.5);  
+  /* animation-direction: alternate; */
 }
 
 @keyframes jump {
-	0% {
-		top: 150px;
-	}
+  0% {
+    top: 150px;
+  }
 
-	30% {
-		top: 120px;
-	}
+  30% {
+    top: 70px;
+  }
 
-	50% {
-		top: 80px;
-	}
-
-	80% {
-		top: 120px;
-	}
-
-	100% {
-		top: 150px;
-	}
+  100% {
+    top: 250px;
+  }
 }
 
 #cactus {
-	width: 40px;
-	height: 40px;
-	position: relative;
-	top: 210px;
-	left: 580px;
-    opacity: 0;
-	background-image: url("img/noads.png");
-	background-size: 40px 40px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 210px;
+  left: 580px;
+  opacity: 0;
+  background-image: url("img/noads.png");
+  background-size: 40px 40px;
 
-	animation: block 2s infinite linear;
-	animation-play-state: paused;
+  animation: block 2s infinite linear;
+  animation-play-state: paused;
 }
 
 #trash {
-	width: 40px;
-	height: 50px;
-	position: relative;
-	top: 150px;
-	left: 580px;
-    opacity: 0;
-	background-image: url("img/trash.png");
-	background-size: 40px 50px;
+  width: 40px;
+  height: 50px;
+  position: relative;
+  top: 150px;
+  left: 580px;
+  opacity: 0;
+  background-image: url("img/trash.png");
+  background-size: 40px 50px;
 
-	animation: block 2s 1s infinite linear;
-	animation-play-state: paused;
+  animation: block 2s 1s infinite linear;
+  animation-play-state: paused;
 }
 
 @keyframes block {
-	0% {
-		left: 580px;
-        opacity: 0;
-	}
-    10% {
-        opacity: 100%;
-    }
+  0% {
+    left: 580px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 100%;
+  }
 
-	100% {
-		left: -20px;
-        opacity: 100%;
-	}
+  100% {
+    left: -20px;
+    opacity: 100%;
+  }
 }
 
 #progress {
-	position: absolute;
-	width: 100%;
-	height: 20%;
+  position: absolute;
+  width: 100%;
+  height: 20%;
 }
 
 #line {
-	position: absolute;
-	width: 80%;
-	height: 2px;
-	margin-left: 10%;
-	top: 30%;
-	background-color: black;
+  position: absolute;
+  width: 80%;
+  height: 2px;
+  margin-left: 10%;
+  top: 30%;
+  background-color: black;
 }
 
 #icon {
-	position: absolute;
-	width: 5%;
-	height: auto;
-	top: 0;
-	left: 8%;
-	animation: status 20s linear;
-	animation-play-state: paused;
+  position: absolute;
+  width: 5%;
+  height: auto;
+  top: 0;
+  left: 8%;
+  animation: status 20s linear;
+  animation-play-state: paused;
 }
 #money {
-	position: absolute;
-	width: 6%;
-	height: auto;
-	top: 0;
-	left: 88%;
+  position: absolute;
+  width: 6%;
+  height: auto;
+  top: 0;
+  left: 88%;
 }
 
 @keyframes status {
-	0% {
-		left: 8%;
-	}
+  0% {
+    left: 8%;
+  }
 
-	100% {
-		left: 92%;
-	}
+  100% {
+    left: 92%;
+  }
 }
 @keyframes typing {
-	0% {
-		width: 0%;
-	}
-	100% {
-		width: 100%;
-	}
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 @keyframes blink-caret {
-	0% {
-        border-color: transparent;
-    }
-	50% {
-		border-color: orange;
-	}
-    100% {
-        border-color: transparent;
-    }
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+  100% {
+    border-color: transparent;
+  }
 }
 
 @keyframes showStart {
-    0% {
-        opacity: 0%;
-    }
-    100%{
-        opacity: 100%;
-    }
-}
-
-#sIntro p {
-	overflow: hidden;
-    font-size: 13px;
-    white-space: nowrap;
-	border-right: 0.15em solid orange; /* The typwriter cursor */ 
-	margin: 0px auto; /* Gives that scrolling effect as the typing happens */
-	letter-spacing: 0.12em; /* Adjust as needed */
-    color: black;
-    text-align: center;
-    
-}
-
-#p1 {
-    animation: 
-        typing 3s steps(30, end),
-		blink-caret 0.75s step-end infinite;
-}
-
-#p2 {
-    animation: 
-        typing 3s 3s steps(30, end) backwards,
-		blink-caret 0.75s 3s backwards infinite;
-}
-#p3 {
-    animation: 
-        typing 1s 6s steps(14, end) backwards,
-		blink-caret 0.75s 6s backwards infinite;
-}
-#p4 {
-    animation: 
-        typing 3s 7s steps(30, end) backwards,
-		blink-caret 0.75s 7s backwards infinite;
-}
-
-#startButt {
+  0% {
+    opacity: 0%;
+  }
+  100% {
     opacity: 100%;
-    animation: showStart 1s 10s forwards;
-    left: 43%;
-    position: absolute;
-    margin-top: 20px;
-    background-color: aquamarine;
-    width: 70px;
+  }
 }
+
 #re {
-    opacity: 100%;
-    animation: showStart 1s 10s forwards;
-    position: absolute;
-    margin-top: 20px;
-    right:45%;
-    background-color: aquamarine;
-    width: 70px;
+  opacity: 100%;
+  animation: showStart 1s 10s forwards;
+  position: absolute;
+  margin-top: 20px;
+  right: 45%;
+  background-color: aquamarine;
+  width: 70px;
 }
 
 #win {
-    display: none;
-    position:absolute;
-    width:100%;
-    height: auto;
-    top: 15%;
-    text-align: center;
-    z-index:101;
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 15%;
+  text-align: center;
+  z-index: 101;
 }
 
+/* INTRODUCTION */
+#startButt {
+  opacity: 100%;
+  animation: showStart 1s 10s forwards;
+  margin-top: 20px;
+  background-color: aquamarine;
+  width: 70px;
+}
 
+#intro {
+  overflow: hidden;
+  font-size: 13px;
+  letter-spacing: 0.12em; /* Adjust as needed */
+  color: black;
+}
 
-#sIntro {
-	position: absolute;
-	width: 100%;
-	height: auto;
-	top: 30px;
-	z-index: 100;
-	cursor: pointer;
+#introduction {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 30px;
+  z-index: 100;
+  cursor: pointer;
+  text-align: center;
+  /* right: 45%; */
 }
