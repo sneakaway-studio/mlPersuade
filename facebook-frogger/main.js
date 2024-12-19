@@ -23,8 +23,8 @@ var cdc = new Image();
 cdc.src = "images/cdc.png";
 var void1 = new Image();
 void1.src = "images/void.jpeg";
-var docs = new Image();
-docs.src = "images/doctors.png";
+var cnnlogo = new Image();
+cnnlogo.src = "images/cnnlogo.png";
 var sdist = new Image();
 sdist.src = "images/sdist.png";
 var meds = new Image();
@@ -66,8 +66,8 @@ Sprite.prototype.render = function () {
 		);
 	} else if (this.shape == "cdc") {
 		context.drawImage(cdc, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
-	} else if (this.shape == "docs") {
-		context.drawImage(docs, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
+	} else if (this.shape == "cnnlogo") {
+		context.drawImage(cnnlogo, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
 	} else if (this.shape == "sdist") {
 		context.drawImage(sdist, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
 	} else if (this.shape == "meds") {
@@ -171,7 +171,7 @@ const patterns = [
 		spacing: [3, 3, 3, 3, 3],
 		color: "#c2c4da",
 		size: grid,
-		shape: "docs",
+		shape: "cnnlogo",
 		speed: 1.8,
 	},
 
