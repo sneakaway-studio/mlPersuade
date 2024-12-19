@@ -13,8 +13,8 @@ var rfk = new Image();
 rfk.src = "images/rfk.png";
 var fnews = new Image();
 fnews.src = "images/fnews.png";
-var herb = new Image();
-herb.src = "images/herb.png";
+var xlogo = new Image();
+xlogo.src = "images/xlogo.png";
 var flogin = new Image();
 flogin.src = "images/flogin.png";
 var feed = new Image();
@@ -56,9 +56,9 @@ Sprite.prototype.render = function () {
 		context.drawImage(rfk, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
 	} else if (this.shape == "fnews") {
 		context.drawImage(fnews, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
-	} else if (this.shape == "herb") {
+	} else if (this.shape == "xlogo") {
 		context.drawImage(
-			herb,
+			xlogo,
 			this.x,
 			this.y + gridGap / 2,
 			this.size,
@@ -114,7 +114,7 @@ const patterns = [
 		spacing: [0, 3, 0], // how many grid spaces between each obstacle
 		color: "#c55843", // color of the obstacle
 		size: grid * 2, // width (rect) / diameter (circle) of the obstacle
-		shape: "herb", // shape of the obstacle (rect or circle)
+		shape: "xlogo", // shape of the obstacle (rect or circle)
 		speed: 0.75, // how fast the obstacle moves and which direction
 	},
 
@@ -139,7 +139,7 @@ const patterns = [
 		spacing: [0, 0, 1],
 		color: "#de0004",
 		size: grid * 1.5,
-		shape: "herb",
+		shape: "xlogo",
 		speed: -1,
 	},
 	{
