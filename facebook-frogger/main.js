@@ -147,7 +147,7 @@ const patterns = [
 		color: "#de0004",
 		size: grid,
 		shape: "ajones",
-		speed: -1,
+		speed: -.6,
 	},
 	// log
 
