@@ -48,7 +48,7 @@ function startGame(){
     document.getElementById("trash").style.display = "box";
     document.getElementById("icon").style.display = "box";
     document.getElementById("dino").style.opacity = "100%";
-    document.getElementById("sIntro").style.display = "none";
+    document.getElementById("introduction").style.display = "none";
     document.getElementById("cactus").style.animationPlayState = "running";
     document.getElementById("trash").style.animationPlayState = "running";
     document.getElementById("icon").style.animationPlayState = "running";
@@ -89,9 +89,45 @@ function restartGame() {
 }
 
 document.addEventListener("keydown", function (event) {
-  jump();
+  // limit to arrow or WASD keys
+  if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "w", "a", "s", "d"].includes(event.key)) {
+    jump();
+  }
 });
 window.addEventListener('message', function(dataPassed) {
     var searchReq = dataPassed.data;
     document.getElementById("mP").innerHTML = searchReq;
  })
+
+let intro = document.getElementById("intro");
+// let contBtn = document.querySelector(".formLink");
+
+var i = 0;
+var txt = 'The mailman has packaged your search request and is heading off to the advertisers to sell it off. Help him avoid the ad blockers and deliver your info! Use the arrow or WASD keys. '
+var speed = 40; /* The speed/duration of typing in milliseconds */
+var pauseDuration = 1000; /* The duration of pause in milliseconds */
+
+function typeWriter() {
+  var introElement = document.getElementById("intro");
+
+  if (i < txt.length) {
+    introElement.innerHTML += txt.charAt(i);
+    if (txt.charAt(i) === '.' || txt.charAt(i) === '!') {
+      introElement.innerHTML += '<br><br>';
+      i++;
+      setTimeout(typeWriter, pauseDuration); // Pause after each sentence
+    } else {
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  } 
+  // else {
+  //   // Display the continue button after the typing is complete
+  //   contBtn.style.display = "block";
+  // }
+}
+
+// Trigger the typeWriter function when the window has finished loading
+window.onload = function() {
+  typeWriter();
+};
