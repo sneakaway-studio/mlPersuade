@@ -113,7 +113,7 @@ const patterns = [
 	{
 		spacing: [0, 3, 0], // how many grid spaces between each obstacle
 		color: "#c55843", // color of the obstacle
-		size: grid * 2, // width (rect) / diameter (circle) of the obstacle
+		size: grid, // width (rect) / diameter (circle) of the obstacle
 		shape: "xlogo", // shape of the obstacle (rect or circle)
 		speed: 0.75, // how fast the obstacle moves and which direction
 	},
@@ -136,9 +136,9 @@ const patterns = [
 
 	// long log
 	{
-		spacing: [0, 0, 1],
+		spacing: [0, 2],
 		color: "#de0004",
-		size: grid * 1.5,
+		size: grid,
 		shape: "xlogo",
 		speed: -1,
 	},
@@ -161,7 +161,7 @@ const patterns = [
 	{
 		spacing: [3, 8],
 		color: "#c2c4da",
-		size: grid * 3,
+		size: grid,
 		shape: "vac",
 		speed: -1,
 	},
@@ -170,7 +170,7 @@ const patterns = [
 	{
 		spacing: [3, 3, 3, 3, 3],
 		color: "#c2c4da",
-		size: grid * 2,
+		size: grid,
 		shape: "docs",
 		speed: 1.8,
 	},
@@ -179,7 +179,7 @@ const patterns = [
 	{
 		spacing: [3, 3, 7],
 		color: "#de3cdd",
-		size: grid * 4,
+		size: grid,
 		shape: "sdist",
 		speed: -1.0,
 	},
@@ -188,7 +188,7 @@ const patterns = [
 	{
 		spacing: [3, 3, 7],
 		color: "#0bcb00",
-		size: grid * 3,
+		size: grid,
 		shape: "cdc",
 		speed: 0.9,
 	},
