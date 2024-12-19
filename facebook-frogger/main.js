@@ -13,8 +13,8 @@ var rfk = new Image();
 rfk.src = "images/rfk.png";
 var fnews = new Image();
 fnews.src = "images/fnews.png";
-var bshapiro = new Image();
-bshapiro.src = "images/herb.png";
+var herb = new Image();
+herb.src = "images/herb.png";
 var flogin = new Image();
 flogin.src = "images/flogin.png";
 var feed = new Image();
@@ -30,7 +30,7 @@ sdist.src = "images/sdist.png";
 var meds = new Image();
 meds.src = "images/meds.png";
 var ajones = new Image();
-ajones.src = "images/alexjones.png";
+ajones.src = "images/alexjones2.png";
 var playOnce = 0;
 
 const grid = 35;
@@ -56,9 +56,9 @@ Sprite.prototype.render = function () {
 		context.drawImage(rfk, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
 	} else if (this.shape == "fnews") {
 		context.drawImage(fnews, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
-	} else if (this.shape == "bshapiro") {
+	} else if (this.shape == "herb") {
 		context.drawImage(
-			bshapiro,
+			herb,
 			this.x,
 			this.y + gridGap / 2,
 			this.size,
@@ -114,7 +114,7 @@ const patterns = [
 		spacing: [0, 3, 0], // how many grid spaces between each obstacle
 		color: "#c55843", // color of the obstacle
 		size: grid * 2, // width (rect) / diameter (circle) of the obstacle
-		shape: "bshapiro", // shape of the obstacle (rect or circle)
+		shape: "herb", // shape of the obstacle (rect or circle)
 		speed: 0.75, // how fast the obstacle moves and which direction
 	},
 
@@ -127,9 +127,9 @@ const patterns = [
 		speed: -1,
 	},
 	{
-		spacing: [3],
+		spacing: [2,0,2],
 		color: "#c55843",
-		size: grid * 3,
+		size: grid,
 		shape: "fnews",
 		speed: 0.5,
 	},
@@ -139,13 +139,13 @@ const patterns = [
 		spacing: [0, 0, 1],
 		color: "#de0004",
 		size: grid * 1.5,
-		shape: "bshapiro",
+		shape: "herb",
 		speed: -1,
 	},
 	{
 		spacing: [3, 0, 3, 0, 3],
 		color: "#de0004",
-		size: grid * 1.5,
+		size: grid,
 		shape: "ajones",
 		speed: -1,
 	},
