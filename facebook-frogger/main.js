@@ -25,8 +25,8 @@ var void1 = new Image();
 void1.src = "images/void.jpeg";
 var cnnlogo = new Image();
 cnnlogo.src = "images/cnnlogo.png";
-var sdist = new Image();
-sdist.src = "images/sdist.png";
+var mask = new Image();
+mask.src = "images/mask.png";
 var meds = new Image();
 meds.src = "images/meds.png";
 var ajones = new Image();
@@ -68,8 +68,8 @@ Sprite.prototype.render = function () {
 		context.drawImage(cdc, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
 	} else if (this.shape == "cnnlogo") {
 		context.drawImage(cnnlogo, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
-	} else if (this.shape == "sdist") {
-		context.drawImage(sdist, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
+	} else if (this.shape == "mask") {
+		context.drawImage(mask, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
 	} else if (this.shape == "meds") {
 		context.drawImage(meds, this.x, this.y + gridGap / 2, this.size, grid - gridGap);
 	} else if (this.shape == "ajones") {
@@ -180,7 +180,7 @@ const patterns = [
 		spacing: [3, 3, 7],
 		color: "#de3cdd",
 		size: grid,
-		shape: "sdist",
+		shape: "mask",
 		speed: -1.0,
 	},
 
